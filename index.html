@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+    content="[TODO: paper description]">
+  <meta name="keywords" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>[TODO: Paper Title]</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700&subset=latin-ext" rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="./src/app.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+
+  <style>
+    hr {
+      border: 0;
+      height: 1px;
+      margin: 24px 0;
+      background-image: linear-gradient(to right,
+          rgba(0, 0, 0, 0),
+          rgba(0, 0, 0, 0.75),
+          rgba(0, 0, 0, 0));
+    }
+
+    button {
+      display: block;
+      margin: 20px auto;
+      padding: 10px 24px;
+      font-size: 16px;
+      font-family: sans-serif;
+      background-color: #f5f5f5;
+      color: #333;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      transition: background-color 0.2s, box-shadow 0.2s;
+    }
+
+    button:hover {
+      background-color: #eaeaea;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    }
+
+    .video-pair { display: grid; gap: 12px; }
+    @media (min-width: 768px) { .video-pair { grid-template-columns: 1fr 1fr; } }
+    .video-pair figure { margin: 0; }
+    .video-pair figcaption { text-align: center; font-size: 14px; opacity: 0.85; margin-top: 6px; }
+    details.box { padding: 0.75rem 1rem; }
+    details summary { cursor: pointer; list-style: none; }
+    details summary::-webkit-details-marker { display: none; }
+  </style>
+</head>
+
+<body>
+
+  <!-- ==================== NAVBAR ==================== -->
+  <nav class="navbar" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+      <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+    </div>
+    <div class="navbar-menu">
+      <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+        <a class="navbar-item" href="">
+          <span class="icon">
+            <i class="fas fa-home"></i>
+          </span>
+        </a>
+        <!-- TODO: add related research links -->
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link">
+            More Research
+          </a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#" target="_blank">[TODO: Related Project 1]</a>
+            <a class="navbar-item" href="#" target="_blank">[TODO: Related Project 2]</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ==================== HERO / TITLE ==================== -->
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-widescreen">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title">[TODO: Paper Title]</h1>
+            <div class="is-size-5 publication-authors">
+              <!-- TODO: fill in authors -->
+              <span class="author-block"><a target="_blank" href="#">Author One</a><sup>1*</sup></span>&nbsp;&nbsp;
+              <span class="author-block"><a target="_blank" href="#">Author Two</a><sup>1*</sup></span>&nbsp;&nbsp;
+              <span class="author-block"><a target="_blank" href="#">Author Three</a><sup>2</sup></span>
+            </div>
+            <h3 style="text-align: center;font-size: 100%; color: #2d2e2e">
+              <!-- TODO: fill in affiliations -->
+              <sup>1</sup> Institution One &nbsp;
+              <sup>2</sup> Institution Two<br>
+              <sup>*</sup> indicates equal contribution.
+            </h3>
+            <div class="column has-text-centered">
+              <div class="is-size-5 publication-authors">
+                <!-- TODO: fill in venue -->
+                <span class="author-block"><b>[TODO: Venue / Conference Year]</b></span>
+              </div>
+            </div>
+            <div class="column has-text-centered">
+              <div class="publication-links">
+                <!-- TODO: update all href links below -->
+                <span class="link-block">
+                  <a href="./files/paper.pdf"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon"><i class="fas fa-file-pdf"></i></span>
+                    <span>Paper</span>
+                  </a>
+                </span>
+                <span class="link-block">
+                  <a href="#"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon"><i class="ai ai-arxiv"></i></span>
+                    <span>arXiv</span>
+                  </a>
+                </span>
+                <span class="link-block">
+                  <a href="#"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon"><i class="fab fa-github"></i></span>
+                    <span>Code</span>
+                  </a>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== TEASER ==================== -->
+  <section class="hero teaser">
+    <div class="container is-max-widescreen">
+      <h2 class="subtitle has-text-centered" style="font-size: 24px;">
+        <!-- TODO: one-sentence summary / tagline -->
+        [TODO: Short, punchy description of the paper's main idea.]
+      </h2>
+      <div class="hero-body">
+        <div class="columns is-vcentered is-centered">
+          <!-- TODO: replace with your teaser image -->
+          <img src='./files/teaser.png' alt="Teaser figure">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== ABSTRACT & VIDEO ==================== -->
+  <section class="hero is-light is-small">
+    <div class="hero-body">
+      <div class="container is-max-widescreen">
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-full-width">
+            <h2 class="title is-3 section-title">Abstract</h2>
+            <div class="content has-text-justified">
+              <p>
+                <!-- TODO: paste your abstract here -->
+                [TODO: Abstract text goes here.]
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-full-width">
+            <h2 class="title is-3 section-title">Video</h2>
+            <!-- TODO: replace with your video file -->
+            <video controls loop playsinline height="100%" style="border-radius:10px;">
+              <source src="./files/video.mp4" type="video/mp4">
+            </video>
+            <p>(Video has sound.)</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== METHOD ==================== -->
+  <section class="section">
+
+    <div class="container is-max-widescreen">
+      <h2 class="title is-3 section-title has-text-centered">Method Overview</h2>
+      <div class="content has-text-justified">
+        <p>
+          <!-- TODO: describe your method -->
+          [TODO: Method description.]
+        </p>
+      </div>
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-fullwidth">
+          <!-- TODO: replace with your method figure -->
+          <img src='./files/method.png' alt="Method overview figure">
+          <br>
+        </div>
+      </div>
+    </div>
+
+    <br><br>
+
+    <!-- ==================== RESULTS ==================== -->
+    <div class="container is-max-widescreen">
+      <h2 class="title is-3 section-title has-text-centered">Results</h2>
+      <div class="content has-text-justified">
+        <p>
+          <!-- TODO: describe your results -->
+          [TODO: Results description.]
+        </p>
+      </div>
+      <!-- TODO: add result videos/images here -->
+      <div class="column">
+        <video class="center" playsinline autoplay loop controls muted
+          src="./files/result.mp4" width="100%" style="border-radius:10px;"></video>
+        <p style="text-align: center; font-size: 18px">[TODO: Result caption]</p>
+      </div>
+    </div>
+
+    <br><br>
+
+    <!-- ==================== QUANTITATIVE RESULTS ==================== -->
+    <div class="container is-max-widescreen">
+      <h2 class="title is-3 section-title has-text-centered">Quantitative Results</h2>
+      <div class="columns is-centered has-text-centered">
+        <div class="column" style="max-width: 1000px;">
+          <!-- TODO: replace with your results figure -->
+          <img src='./files/results.png' alt="Quantitative results figure">
+        </div>
+      </div>
+      <div class="content has-text-justified">
+        <p>
+          <!-- TODO: describe quantitative results -->
+          [TODO: Quantitative results description.]
+        </p>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- ==================== BIBTEX ==================== -->
+  <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title is-3 section-title has-text-centered">BibTeX</h2>
+      <!-- TODO: fill in your BibTeX entry -->
+      <pre><code>
+@article{TODO2025,
+  title={[TODO: Paper Title]},
+  author={[TODO: Authors]},
+  journal={arXiv preprint arXiv:[TODO:XXXX.XXXXX]},
+  year={2025}
+}
+      </code></pre>
+    </div>
+  </section>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="content has-text-centered">
+          <p>
+            The template is borrowed from <a href="https://github.com/nerfies/nerfies.github.io">Nerfies</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+
+</html>
