@@ -197,7 +197,7 @@
                   </a>
                 </span>
                 <span class="link-block">
-                  <a href="https://huggingface.co/datasets/shashuo0104/residual_copilot_data"
+                  <a href="https://huggingface.co/collections/shashuo0104/residual-copilot"
                     class="external-link button is-normal is-rounded is-dark">
                     <span class="icon"><i class="fas fa-database"></i></span>
                     <span>Data</span>
@@ -230,62 +230,56 @@
   </section>
 
   <!-- ==================== Demos (NEW: task tabs + 6x2 video grid) ==================== -->
-  <section class="hero is-small section-dark" id="demos">
-    <div class="hero-body">
-      <div class="container is-max-widescreen">
-        <div class="columns is-centered has-text-centered">
-          <div class="column is-full-width">
-            <h2 class="title is-3 section-title">Interactive Residual Copilot Demos</h2>
-            <p class="subtitle has-text-justified" style="font-size: 18px;">
-              Side-by-side comparison of Direct Teleoperation (Col. 1-2) vs. Copilot-Assisted Teleoperation (Col. 3-4)
-              across fine-grained manipulation tasks on the same demonstration trajectories in simulation.
-            </p>
+  <section class="section section-dark" id="demos">
+    <div class="container is-max-widescreen">
+      <h2 class="title is-3 section-title has-text-centered">Interactive Residual Copilot Demos</h2>
+      <p class="content has-text-justified" style="font-size: 18px;">
+        Side-by-side comparison of Direct Teleoperation (Col. 1-2) vs. Copilot-Assisted Teleoperation (Col. 3-4)
+        across fine-grained manipulation tasks on the same demonstration trajectories in simulation.
+      </p>
 
-            <!-- Task selector (centered row of 3 buttons) -->
-            <div style="margin-bottom: 1.5rem;">
-              <table style="margin: 0 auto; border-collapse: separate; border-spacing: 6px;">
-                <tr>
-                  <td style="vertical-align: middle; padding-right: 12px;"><span style="font-weight: bold;">Task:</span></td>
-                  <td><button class="button is-rounded demo-task-btn is-info" data-task="nut" onclick="selectTask('nut')" style="min-width:140px;">Nut Threading</button></td>
-                  <td><button class="button is-rounded demo-task-btn" data-task="gear" onclick="selectTask('gear')" style="min-width:140px;">Gear Meshing</button></td>
-                  <td><button class="button is-rounded demo-task-btn" data-task="peg" onclick="selectTask('peg')" style="min-width:140px;">Peg Insertion</button></td>
-                </tr>
-              </table>
-            </div>
-
-            <!-- Legend -->
-            <div style="display: flex; justify-content: center; gap: 24px; margin-bottom: 1.5rem;">
-              <span style="display: flex; align-items: center; gap: 6px;">
-                <span style="display: inline-block; width: 14px; height: 14px; background: rgb(237, 110, 87); border-radius: 3px;"></span>
-                <span style="color: rgb(237, 110, 87);">Human Actions</span>
-              </span>
-              <span style="display: flex; align-items: center; gap: 6px;">
-                <span style="display: inline-block; width: 14px; height: 14px; background: rgb(163, 131, 193); border-radius: 3px;"></span>
-                <span style="color: rgb(163, 131, 193);">Residual Actions</span>
-              </span>
-              <span style="display: flex; align-items: center; gap: 6px;">
-                <span style="display: inline-block; width: 14px; height: 14px; background: rgb(71, 159, 248); border-radius: 3px;"></span>
-                <span style="color: rgb(71, 159, 248);">Net Actions</span>
-              </span>
-            </div>
-
-            <!-- 3-row x 4-column video grid -->
-            <div id="demo-video-grid">
-              <!-- Videos are populated by JS -->
-            </div>
-            <!-- Column headers below videos -->
-            <div class="video-quad has-divider" style="margin-top: 4px;">
-              <div style="text-align: center; font-size: 16px; grid-column: span 2;">Direct Teleoperation</div>
-              <div style="text-align: center; font-weight: bold; font-size: 16px; grid-column: span 2;">Copilot-Assisted Teleoperation (Ours)</div>
-            </div>
-
-            <p>
-              <br>
-              (All videos 1x speed)
-            </p>
-          </div>
-        </div>
+      <!-- Task selector (centered row of 3 buttons) -->
+      <div class="has-text-centered" style="margin-bottom: 1.5rem;">
+        <table style="margin: 0 auto; border-collapse: separate; border-spacing: 6px;">
+          <tr>
+            <td style="vertical-align: middle; padding-right: 12px;"><span style="font-weight: bold;">Task:</span></td>
+            <td><button class="button is-rounded demo-task-btn is-info" data-task="nut" onclick="selectTask('nut')" style="min-width:140px;">Nut Threading</button></td>
+            <td><button class="button is-rounded demo-task-btn" data-task="gear" onclick="selectTask('gear')" style="min-width:140px;">Gear Meshing</button></td>
+            <td><button class="button is-rounded demo-task-btn" data-task="peg" onclick="selectTask('peg')" style="min-width:140px;">Peg Insertion</button></td>
+          </tr>
+        </table>
       </div>
+
+      <!-- Legend -->
+      <div style="display: flex; justify-content: center; gap: 24px; margin-bottom: 1.5rem;">
+        <span style="display: flex; align-items: center; gap: 6px;">
+          <span style="display: inline-block; width: 14px; height: 14px; background: rgb(237, 110, 87); border-radius: 3px;"></span>
+          <span style="color: rgb(237, 110, 87);">Human Actions</span>
+        </span>
+        <span style="display: flex; align-items: center; gap: 6px;">
+          <span style="display: inline-block; width: 14px; height: 14px; background: rgb(163, 131, 193); border-radius: 3px;"></span>
+          <span style="color: rgb(163, 131, 193);">Residual Actions</span>
+        </span>
+        <span style="display: flex; align-items: center; gap: 6px;">
+          <span style="display: inline-block; width: 14px; height: 14px; background: rgb(71, 159, 248); border-radius: 3px;"></span>
+          <span style="color: rgb(71, 159, 248);">Net Actions</span>
+        </span>
+      </div>
+
+      <!-- 3-row x 4-column video grid -->
+      <div id="demo-video-grid">
+        <!-- Videos are populated by JS -->
+      </div>
+      <!-- Column headers below videos -->
+      <div class="video-quad has-divider" style="margin-top: 4px;">
+        <div style="text-align: center; font-size: 16px; grid-column: span 2;">Direct Teleoperation</div>
+        <div style="text-align: center; font-weight: bold; font-size: 16px; grid-column: span 2;">Copilot-Assisted Teleoperation (Ours)</div>
+      </div>
+
+      <p class="has-text-centered">
+        <br>
+        (All videos 1x speed)
+      </p>
     </div>
   </section>
 
@@ -379,86 +373,80 @@
   </script>
 
   <!-- ==================== Demos 2: Shared Autonomy ==================== -->
-  <section class="hero is-small" id="demos2">
-    <div class="hero-body">
-      <div class="container is-max-widescreen">
-        <div class="columns is-centered has-text-centered">
-          <div class="column is-full-width">
-            <h2 class="title is-3 section-title">Interactive Suite of Pilot-Copilot Demos</h2>
-            <p class="subtitle has-text-centered" style="font-size: 18px;">
-              Comparing copilot models across different pilot models and manipulation tasks in simulation. <br>
-            </p>
+  <section class="section" id="demos2">
+    <div class="container is-max-widescreen">
+      <h2 class="title is-3 section-title has-text-centered">Interactive Suite of Pilot-Copilot Demos</h2>
+      <p class="content has-text-centered" style="font-size: 18px;">
+        Comparing copilot models across different pilot models and manipulation tasks in simulation.
+      </p>
 
-            <!-- Task × Pilot selector grid -->
-            <div class="demo-selector" style="margin-bottom: 1.5rem;">
-              <table style="width: 100%; border-collapse: separate; border-spacing: 6px;">
-                <tr>
-                  <td style="width: 16%;"><span style="font-weight: bold;">Task</span></td>
-                  <td colspan="5"><span style="font-weight: bold;">Pilot Model</span></td>
-                </tr>
-                <tr data-task-row2="nut">
-                  <td><button class="button is-rounded demo2-task-btn is-info" data-task="nut" onclick="selectTask2('nut')" style="width:100%;">Nut Threading</button></td>
-                  <td><button class="button is-rounded demo2-pilot-btn is-info" data-task="nut" data-pilot="residual" onclick="selectDemo2('nut','residual')" style="width:100%;">Residual Pilot</button></td>
-                  <td><button class="button is-rounded demo2-pilot-btn" data-task="nut" data-pilot="bc" onclick="selectDemo2('nut','bc')" style="width:100%;">BC Pilot</button></td>
-                  <td><button class="button is-rounded demo2-pilot-btn" data-task="nut" data-pilot="expert" onclick="selectDemo2('nut','expert')" style="width:100%;">Expert Pilot</button></td>
-                  <td><button class="button is-rounded demo2-pilot-btn" data-task="nut" data-pilot="noisy" onclick="selectDemo2('nut','noisy')" style="width:100%;">Noisy Pilot</button></td>
-                  <td><button class="button is-rounded demo2-pilot-btn" data-task="nut" data-pilot="laggy" onclick="selectDemo2('nut','laggy')" style="width:100%;">Laggy Pilot</button></td>
-                </tr>
-                <tr data-task-row2="gear">
-                  <td><button class="button is-rounded demo2-task-btn" data-task="gear" onclick="selectTask2('gear')" style="width:100%;">Gear Meshing</button></td>
-                  <td><button class="button is-rounded demo2-pilot-btn is-ghost" data-task="gear" data-pilot="residual" onclick="selectDemo2('gear','residual')" style="width:100%;">Residual Pilot</button></td>
-                  <td><button class="button is-rounded demo2-pilot-btn is-ghost" data-task="gear" data-pilot="bc" onclick="selectDemo2('gear','bc')" style="width:100%;">BC Pilot</button></td>
-                  <td><button class="button is-rounded demo2-pilot-btn is-ghost" data-task="gear" data-pilot="expert" onclick="selectDemo2('gear','expert')" style="width:100%;">Expert Pilot</button></td>
-                  <td><button class="button is-rounded demo2-pilot-btn is-ghost" data-task="gear" data-pilot="noisy" onclick="selectDemo2('gear','noisy')" style="width:100%;">Noisy Pilot</button></td>
-                  <td><button class="button is-rounded demo2-pilot-btn is-ghost" data-task="gear" data-pilot="laggy" onclick="selectDemo2('gear','laggy')" style="width:100%;">Laggy Pilot</button></td>
-                </tr>
-                <tr data-task-row2="peg">
-                  <td><button class="button is-rounded demo2-task-btn" data-task="peg" onclick="selectTask2('peg')" style="width:100%;">Peg Insertion</button></td>
-                  <td><button class="button is-rounded demo2-pilot-btn is-ghost" data-task="peg" data-pilot="residual" onclick="selectDemo2('peg','residual')" style="width:100%;">Residual Pilot</button></td>
-                  <td><button class="button is-rounded demo2-pilot-btn is-ghost" data-task="peg" data-pilot="bc" onclick="selectDemo2('peg','bc')" style="width:100%;">BC Pilot</button></td>
-                  <td><button class="button is-rounded demo2-pilot-btn is-ghost" data-task="peg" data-pilot="expert" onclick="selectDemo2('peg','expert')" style="width:100%;">Expert Pilot</button></td>
-                  <td><button class="button is-rounded demo2-pilot-btn is-ghost" data-task="peg" data-pilot="noisy" onclick="selectDemo2('peg','noisy')" style="width:100%;">Noisy Pilot</button></td>
-                  <td><button class="button is-rounded demo2-pilot-btn is-ghost" data-task="peg" data-pilot="laggy" onclick="selectDemo2('peg','laggy')" style="width:100%;">Laggy Pilot</button></td>
-                </tr>
-              </table>
-            </div>
-
-            <!-- Legend -->
-            <div style="display: flex; justify-content: center; gap: 24px; margin-bottom: 1.5rem;">
-              <span style="display: flex; align-items: center; gap: 6px;">
-                <span style="display: inline-block; width: 14px; height: 14px; background: rgb(237, 110, 87); border-radius: 3px;"></span>
-                <span style="color: rgb(237, 110, 87);">Human Actions</span>
-              </span>
-              <span style="display: flex; align-items: center; gap: 6px;">
-                <span style="display: inline-block; width: 14px; height: 14px; background: rgb(163, 131, 193); border-radius: 3px;"></span>
-                <span style="color: rgb(163, 131, 193);">Residual Actions</span>
-              </span>
-              <span style="display: flex; align-items: center; gap: 6px;">
-                <span style="display: inline-block; width: 14px; height: 14px; background: rgb(71, 159, 248); border-radius: 3px;"></span>
-                <span style="color: rgb(71, 159, 248);">Net Actions</span>
-              </span>
-            </div>
-
-            <!-- 2-row x 4-column video grid -->
-            <div id="demo2-video-grid">
-              <!-- Column headers -->
-              <div class="video-quad-labeled" style="margin-bottom: 4px;">
-                <div></div><!-- spacer for label column -->
-                <div style="text-align: center; font-size: 15px;">Pilot Alone</div>
-                <div style="text-align: center; font-size: 15px;">Guided Diffusion BC</div>
-                <div style="text-align: center; font-size: 15px;">Residual BC</div>
-                <div style="text-align: center; font-weight: bold; font-size: 15px;">Residual Copilot (Ours)</div>
-              </div>
-              <!-- Videos are populated by JS -->
-            </div>
-
-            <p>
-              <br>
-              (All videos 1x speed)
-            </p>
-          </div>
-        </div>
+      <!-- Task × Pilot selector grid -->
+      <div class="demo-selector" style="margin-bottom: 1.5rem;">
+        <table style="width: 100%; border-collapse: separate; border-spacing: 6px;">
+          <tr>
+            <td style="width: 16%;"><span style="font-weight: bold;">Task</span></td>
+            <td colspan="5"><span style="font-weight: bold;">Pilot Model</span></td>
+          </tr>
+          <tr data-task-row2="nut">
+            <td><button class="button is-rounded demo2-task-btn is-info" data-task="nut" onclick="selectTask2('nut')" style="width:100%;">Nut Threading</button></td>
+            <td><button class="button is-rounded demo2-pilot-btn is-info" data-task="nut" data-pilot="residual" onclick="selectDemo2('nut','residual')" style="width:100%;">Residual Pilot</button></td>
+            <td><button class="button is-rounded demo2-pilot-btn" data-task="nut" data-pilot="bc" onclick="selectDemo2('nut','bc')" style="width:100%;">BC Pilot</button></td>
+            <td><button class="button is-rounded demo2-pilot-btn" data-task="nut" data-pilot="expert" onclick="selectDemo2('nut','expert')" style="width:100%;">Expert Pilot</button></td>
+            <td><button class="button is-rounded demo2-pilot-btn" data-task="nut" data-pilot="noisy" onclick="selectDemo2('nut','noisy')" style="width:100%;">Noisy Pilot</button></td>
+            <td><button class="button is-rounded demo2-pilot-btn" data-task="nut" data-pilot="laggy" onclick="selectDemo2('nut','laggy')" style="width:100%;">Laggy Pilot</button></td>
+          </tr>
+          <tr data-task-row2="gear">
+            <td><button class="button is-rounded demo2-task-btn" data-task="gear" onclick="selectTask2('gear')" style="width:100%;">Gear Meshing</button></td>
+            <td><button class="button is-rounded demo2-pilot-btn is-ghost" data-task="gear" data-pilot="residual" onclick="selectDemo2('gear','residual')" style="width:100%;">Residual Pilot</button></td>
+            <td><button class="button is-rounded demo2-pilot-btn is-ghost" data-task="gear" data-pilot="bc" onclick="selectDemo2('gear','bc')" style="width:100%;">BC Pilot</button></td>
+            <td><button class="button is-rounded demo2-pilot-btn is-ghost" data-task="gear" data-pilot="expert" onclick="selectDemo2('gear','expert')" style="width:100%;">Expert Pilot</button></td>
+            <td><button class="button is-rounded demo2-pilot-btn is-ghost" data-task="gear" data-pilot="noisy" onclick="selectDemo2('gear','noisy')" style="width:100%;">Noisy Pilot</button></td>
+            <td><button class="button is-rounded demo2-pilot-btn is-ghost" data-task="gear" data-pilot="laggy" onclick="selectDemo2('gear','laggy')" style="width:100%;">Laggy Pilot</button></td>
+          </tr>
+          <tr data-task-row2="peg">
+            <td><button class="button is-rounded demo2-task-btn" data-task="peg" onclick="selectTask2('peg')" style="width:100%;">Peg Insertion</button></td>
+            <td><button class="button is-rounded demo2-pilot-btn is-ghost" data-task="peg" data-pilot="residual" onclick="selectDemo2('peg','residual')" style="width:100%;">Residual Pilot</button></td>
+            <td><button class="button is-rounded demo2-pilot-btn is-ghost" data-task="peg" data-pilot="bc" onclick="selectDemo2('peg','bc')" style="width:100%;">BC Pilot</button></td>
+            <td><button class="button is-rounded demo2-pilot-btn is-ghost" data-task="peg" data-pilot="expert" onclick="selectDemo2('peg','expert')" style="width:100%;">Expert Pilot</button></td>
+            <td><button class="button is-rounded demo2-pilot-btn is-ghost" data-task="peg" data-pilot="noisy" onclick="selectDemo2('peg','noisy')" style="width:100%;">Noisy Pilot</button></td>
+            <td><button class="button is-rounded demo2-pilot-btn is-ghost" data-task="peg" data-pilot="laggy" onclick="selectDemo2('peg','laggy')" style="width:100%;">Laggy Pilot</button></td>
+          </tr>
+        </table>
       </div>
+
+      <!-- Legend -->
+      <div style="display: flex; justify-content: center; gap: 24px; margin-bottom: 1.5rem;">
+        <span style="display: flex; align-items: center; gap: 6px;">
+          <span style="display: inline-block; width: 14px; height: 14px; background: rgb(237, 110, 87); border-radius: 3px;"></span>
+          <span style="color: rgb(237, 110, 87);">Human Actions</span>
+        </span>
+        <span style="display: flex; align-items: center; gap: 6px;">
+          <span style="display: inline-block; width: 14px; height: 14px; background: rgb(163, 131, 193); border-radius: 3px;"></span>
+          <span style="color: rgb(163, 131, 193);">Residual Actions</span>
+        </span>
+        <span style="display: flex; align-items: center; gap: 6px;">
+          <span style="display: inline-block; width: 14px; height: 14px; background: rgb(71, 159, 248); border-radius: 3px;"></span>
+          <span style="color: rgb(71, 159, 248);">Net Actions</span>
+        </span>
+      </div>
+
+      <!-- 2-row x 4-column video grid -->
+      <div id="demo2-video-grid">
+        <!-- Column headers -->
+        <div class="video-quad-labeled" style="margin-bottom: 4px;">
+          <div></div><!-- spacer for label column -->
+          <div style="text-align: center; font-size: 15px;">Pilot Alone</div>
+          <div style="text-align: center; font-size: 15px;">Guided Diffusion BC</div>
+          <div style="text-align: center; font-size: 15px;">Residual BC</div>
+          <div style="text-align: center; font-weight: bold; font-size: 15px;">Residual Copilot (Ours)</div>
+        </div>
+        <!-- Videos are populated by JS -->
+      </div>
+
+      <p class="has-text-centered">
+        <br>
+        (All videos 1x speed)
+      </p>
     </div>
   </section>
 
@@ -566,28 +554,21 @@
   </script>
 
   <!-- ==================== ABSTRACT & VIDEO ==================== -->
-  <section class="hero is-small section-dark" id="video">
-    <div class="hero-body">
-      <div class="container is-max-widescreen">
-        <div class="columns is-centered has-text-centered">
-          <div class="column is-full-width">
-            <h2 class="title is-3 section-title">Abstract</h2>
-            <div class="content has-text-justified">
-              <p>
-                Fine-grained, contact-rich teleoperation remains slow, error-prone, and unreliable in real-world manipulation tasks, even for experienced operators. Shared autonomy offers a promising way to improve performance by combining human intent with automated assistance, but learning effective assistance in simulation requires a faithful model of human behavior, which is difficult to obtain in practice. We propose a real-to-sim-to-real shared autonomy framework that augments human teleoperation with learned corrective behaviors, using a simple yet effective k-nearest-neighbor (kNN) human surrogate to model operator actions in simulation. The surrogate is fit from less than five minutes of real-world teleoperation data and enables stable training of a residual copilot policy with model-free reinforcement learning. The resulting copilot is deployed to assist human operators in real-world fine-grained manipulation tasks. Through simulation experiments and a user study with sixteen participants on industry-relevant tasks, including nut threading, gear meshing, and peg insertion, we show that our system improves task success for novice operators and execution efficiency for experienced operators compared to pure teleoperation and shared-autonomy baselines that rely on expert priors or behavioral-cloning pilots. In addition, copilot-assisted teleoperation produces higher-quality demonstrations for downstream imitation learning.
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="columns is-centered has-text-centered">
-          <div class="column is-full-width">
-            <h2 class="title is-3 section-title">Video</h2>
-            <!-- TODO: replace with your video file -->
-            <video controls loop playsinline height="100%" style="border-radius:10px;">
-              <source src="./files/videos/supp_video.mp4" type="video/mp4">
-            </video>
-            <p>(Video has sound.)</p>
-          </div>
+  <section class="section section-dark" id="video">
+    <div class="container is-max-widescreen">
+      <h2 class="title is-3 section-title has-text-centered">Abstract</h2>
+      <div class="content has-text-justified">
+        <p>
+          Fine-grained, contact-rich teleoperation remains slow, error-prone, and unreliable in real-world manipulation tasks, even for experienced operators. Shared autonomy offers a promising way to improve performance by combining human intent with automated assistance, but learning effective assistance in simulation requires a faithful model of human behavior, which is difficult to obtain in practice. We propose a real-to-sim-to-real shared autonomy framework that augments human teleoperation with learned corrective behaviors, using a simple yet effective k-nearest-neighbor (kNN) human surrogate to model operator actions in simulation. The surrogate is fit from less than five minutes of real-world teleoperation data and enables stable training of a residual copilot policy with model-free reinforcement learning. The resulting copilot is deployed to assist human operators in real-world fine-grained manipulation tasks. Through simulation experiments and a user study with sixteen participants on industry-relevant tasks, including nut threading, gear meshing, and peg insertion, we show that our system improves task success for novice operators and execution efficiency for experienced operators compared to pure teleoperation and shared-autonomy baselines that rely on expert priors or behavioral-cloning pilots. In addition, copilot-assisted teleoperation produces higher-quality demonstrations for downstream imitation learning.
+        </p>
+      </div>
+      <h2 class="title is-3 section-title has-text-centered">Video</h2>
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-full-width">
+          <video controls loop playsinline height="100%" style="border-radius:10px;">
+            <source src="./files/videos/supp_video.mp4" type="video/mp4">
+          </video>
+          <p>(Video has sound.)</p>
         </div>
       </div>
     </div>
@@ -597,11 +578,11 @@
   <section class="section" id="user-study">
     <div class="container is-max-widescreen">
       <h2 class="title is-3 section-title has-text-centered">User Study</h2>
-        <p class="subtitle has-text-justified" style="font-size: 18px;">
+        <p class="content has-text-justified" style="font-size: 18px;">
           We conduct a user study to evaluate the effectiveness of our residual copilot in improving
           human performance on fine-grained, contact-rich manipulation tasks. 
           Below, we present side-by-side comparisons of direct teleoperation and copilot-assisted teleoperation 
-          from representative, uncut participant trials (shared with consent). 
+          from participant trials (shared with consent). 
           The results show that the copilot generalizes across different operators and consistently improves both efficiency and task success.
         </p>
 
@@ -616,14 +597,14 @@
           <!-- Nut Threading -->
           <div class="video-pair" style="margin-bottom: 12px;">
             <figure>
-              <video controls playsinline muted style="width:100%; border-radius:10px;">
-                <source src="" type="video/mp4">
+              <video id="us-teleop-nt" autoplay controls playsinline muted style="width:100%; border-radius:10px;">
+                <source src="files/user_study/teleop_nt.mp4" type="video/mp4">
               </video>
               <figcaption>Nut Threading</figcaption>
             </figure>
             <figure>
-              <video controls playsinline muted style="width:100%; border-radius:10px;">
-                <source src="" type="video/mp4">
+              <video id="us-copilot-nt" autoplay controls playsinline muted style="width:100%; border-radius:10px;">
+                <source src="files/user_study/copilot_nt.mp4" type="video/mp4">
               </video>
               <figcaption>Nut Threading</figcaption>
             </figure>
@@ -631,14 +612,14 @@
           <!-- Gear Meshing -->
           <div class="video-pair" style="margin-bottom: 12px;">
             <figure>
-              <video controls playsinline muted style="width:100%; border-radius:10px;">
-                <source src="" type="video/mp4">
+              <video id="us-teleop-gm" autoplay controls playsinline muted style="width:100%; border-radius:10px;">
+                <source src="files/user_study/teleop_gm.mp4" type="video/mp4">
               </video>
               <figcaption>Gear Meshing</figcaption>
             </figure>
             <figure>
-              <video controls playsinline muted style="width:100%; border-radius:10px;">
-                <source src="" type="video/mp4">
+              <video id="us-copilot-gm" autoplay controls playsinline muted style="width:100%; border-radius:10px;">
+                <source src="files/user_study/copilot_gm.mp4" type="video/mp4">
               </video>
               <figcaption>Gear Meshing</figcaption>
             </figure>
@@ -646,21 +627,48 @@
           <!-- Peg Insertion -->
           <div class="video-pair" style="margin-bottom: 12px;">
             <figure>
-              <video controls playsinline muted style="width:100%; border-radius:10px;">
-                <source src="" type="video/mp4">
+              <video id="us-teleop-pi" autoplay controls playsinline muted style="width:100%; border-radius:10px;">
+                <source src="files/user_study/teleop_pi.mp4" type="video/mp4">
               </video>
               <figcaption>Peg Insertion</figcaption>
             </figure>
             <figure>
-              <video controls playsinline muted style="width:100%; border-radius:10px;">
-                <source src="" type="video/mp4">
+              <video id="us-copilot-pi" autoplay controls playsinline muted style="width:100%; border-radius:10px;">
+                <source src="files/user_study/copilot_pi.mp4" type="video/mp4">
               </video>
               <figcaption>Peg Insertion</figcaption>
             </figure>
           </div>
-          <p style="text-align: center;">(All videos 10x speed)</p>
+          <p style="text-align: center;">(All videos 5x speed)</p>
         </div>
       </div>
+      <script>
+        // Sync each user-study video pair: wait for both to end, then restart together
+        (function() {
+          var pairs = [
+            ['us-teleop-nt', 'us-copilot-nt'],
+            ['us-teleop-gm', 'us-copilot-gm'],
+            ['us-teleop-pi', 'us-copilot-pi']
+          ];
+          pairs.forEach(function(ids) {
+            var v1 = document.getElementById(ids[0]);
+            var v2 = document.getElementById(ids[1]);
+            var v1Ended = false, v2Ended = false;
+            function tryRestart() {
+              if (v1Ended && v2Ended) {
+                v1Ended = false;
+                v2Ended = false;
+                v1.currentTime = 0;
+                v2.currentTime = 0;
+                v1.play();
+                v2.play();
+              }
+            }
+            v1.addEventListener('ended', function() { v1Ended = true; tryRestart(); });
+            v2.addEventListener('ended', function() { v2Ended = true; tryRestart(); });
+          });
+        })();
+      </script>
 
       <div class="columns is-centered has-text-centered">
         <div class="column" style="max-width: 1000px;">
@@ -685,7 +693,7 @@
   </section>
 
   <!-- ==================== DOWNSTREAM-LEARNING ==================== -->
-  <section class="section is-small section-dark" id="downstream-learning">
+  <section class="section section-dark" id="downstream-learning">
     <div class="container is-max-widescreen">
       <h2 class="title is-3 section-title has-text-centered">Improved Downstream Learning</h2>
       <div class="content has-text-justified">
@@ -757,7 +765,7 @@
   </section>
 
   <!-- ==================== KNN MOTIVATION ==================== -->
-  <section class="section is-small section-dark" id="knn-motivation">
+  <section class="section section-dark" id="knn-motivation">
     <div class="container is-max-widescreen">
       <h2 class="title is-3 section-title has-text-centered">kNN Motivation</h2>
       <div class="content has-text-justified">
@@ -772,9 +780,10 @@
           and inducing local, structured exploration instead of uncontrolled global drift.
         </p>
       </div>
-      <!-- TODO: add result videos/images here -->
-      <div class="column">
-        <img src='./files/images/web-knn-motiv.png' alt="kNN Motivation figure">
+      <div class="columns is-centered has-text-centered">
+        <div class="column">
+          <img src='./files/images/web-knn-motiv.png' alt="kNN Motivation figure">
+        </div>
       </div>
     </div>
   </section>
@@ -785,7 +794,7 @@
       <h2 class="title is-3 section-title has-text-centered">Open Artifacts</h2>
       <div class="content has-text-justified">
         <p>
-          We release all artifacts necessary to reproduce our results, including policy checkpoints, in a Hugging Face dataset: <code>shashuo0104/residual_copilot_data</code>. The dataset contains:
+          We release all artifacts necessary to reproduce our results, including policy checkpoints, in a Hugging Face collection: <code>shashuo0104/residual-copilot</code>. The collection contains:
           (1) datasets for all real-world and simulation demonstrations,
           (2) robot, object, and camera assets for simulation, and
           (3) checkpoints for all pilot and copilot policies.
@@ -856,7 +865,7 @@
       </div>
       </div>
       <div class="has-text-centered" style="margin-top: 1.5rem;">
-        <a href="https://huggingface.co/datasets/shashuo0104/residual_copilot_data"
+        <a href="https://huggingface.co/collections/shashuo0104/residual-copilot"
           class="external-link button is-normal is-rounded is-dark">
           <span class="icon"><i class="fas fa-database"></i></span>
           <span>Browse HF Dataset</span>
@@ -867,7 +876,7 @@
 
   <!-- ==================== BIBTEX ==================== -->
   <section class="section section-dark" id="BibTeX">
-    <div class="container is-max-desktop content">
+    <div class="container is-max-widescreen content">
       <h2 class="title is-3 section-title has-text-centered">BibTeX</h2>
       <!-- TODO: fill in your BibTeX entry -->
       <pre><code>
