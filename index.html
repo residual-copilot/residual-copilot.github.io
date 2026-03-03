@@ -90,6 +90,7 @@
       pointer-events: none;
     }
 
+
     .video-pair { display: grid; gap: 12px; }
     @media (min-width: 768px) { .video-pair { grid-template-columns: 1fr 1fr; } }
     .video-quad { display: grid; gap: 12px; position: relative; }
@@ -134,13 +135,14 @@
       </a>
     </div>
     <div class="navbar-menu" id="navMenu" style="background-color: rgb(35, 44, 59);">
-      <div class="navbar-end" style="flex-grow: 1; justify-content: space-evenly; margin-left: 0%;">
-        <a class="navbar-item" href="#demos" style="color: #bbb; font-size: 0.9rem;">Copilot Demos</a>
-        <a class="navbar-item" href="#demos2" style="color: #bbb; font-size: 0.9rem;">Pilot-Copilot Demos</a>
-        <a class="navbar-item" href="#video" style="color: #bbb; font-size: 0.9rem;">Abstract & Video</a>
+      <div class="navbar-end" style="flex-grow: 1; justify-content: space-evenly; margin-left: 0%; padding-left: 2rem; padding-right: 2rem;">
+        <a class="navbar-item" href="#abstract" style="color: #bbb; font-size: 0.9rem;">Abstract</a>
+        <a class="navbar-item" href="#video" style="color: #bbb; font-size: 0.9rem;">Walkthrough Video</a>
         <a class="navbar-item" href="#user-study" style="color: #bbb; font-size: 0.9rem;">User Study</a>
         <a class="navbar-item" href="#downstream-learning" style="color: #bbb; font-size: 0.9rem;">Downstream Learning</a>
         <a class="navbar-item" href="#method" style="color: #bbb; font-size: 0.9rem;">Method</a>
+        <a class="navbar-item" href="#demos" style="color: #bbb; font-size: 0.9rem;">Copilot Demos</a>
+        <a class="navbar-item" href="#demos2" style="color: #bbb; font-size: 0.9rem;">Pilot-Copilot Demos</a>
         <a class="navbar-item" href="#datasets" style="color: #bbb; font-size: 0.9rem;">Open Artifacts</a>
         <a class="navbar-item" href="#BibTeX" style="color: #bbb; font-size: 0.9rem;">Citation</a>
       </div>
@@ -162,11 +164,15 @@
               <span class="author-block"><a target="_blank" href="https://antonilo.github.io/">Antonio Loquercio</a><sup>2</sup></span>&nbsp;&nbsp;
               <span class="author-block"><a target="_blank" href="https://yunzhuli.github.io/">Yunzhu Li</a><sup>1</sup></span>&nbsp;&nbsp;
             </div>
-            <h3 style="text-align: center;font-size: 100%; color: #2d2e2e">
+            <div class="is-size-5 publication-authors" style="color: #2d2e2e">
               <!-- TODO: fill in affiliations -->
-              <sup>1</sup> Columbia University &nbsp;
-              <sup>2</sup> University of Pennsylvania<br>
-            </h3>
+              <span class="author-block"><sup>1</sup> Columbia University</span>&nbsp;&nbsp;
+              <span class="author-block"><sup>2</sup> University of Pennsylvania</span>
+            </div>
+            <div style="display: flex; justify-content: center; align-items: center; gap: 40px; margin-top: 12px;">
+              <img src="./files/images/columbia_logo.png" alt="Columbia University" style="height: 80px;">
+              <img src="./files/images/upenn_logo.png" alt="University of Pennsylvania" style="height: 70px;">
+            </div>
             <!-- <div class="column has-text-centered">
               <div class="is-size-5 publication-authors">
                 <span class="author-block"><b>[TODO: Venue / Conference Year]</b></span>
@@ -211,7 +217,7 @@
     </div>
   </section>
 
-  <!-- ==================== TEASER ==================== -->
+  <!-- ==================== TEASER TEXT ==================== -->
   <section class="hero teaser">
     <div class="container is-max-widescreen">
       <h2 class="subtitle has-text-centered" style="font-size: 24px;">
@@ -220,22 +226,209 @@
         <span style="color: #27ae60;"><b>Efficient, reliable</b></span> shared autonomy<br>
         <i>A <b>Residual Copilot</b> learned from just minutes of demonstrations.</i>
       </h2>
-      <div class="hero-body">
-        <div class="columns is-vcentered is-centered">
-          <!-- TODO: replace with your teaser image -->
-          <img src='files/images/teaser.png' alt="Teaser figure">
+    </div>
+  </section>
+
+  <!-- ==================== VIDEO PLACEHOLDER ==================== -->
+  <section class="hero">
+    <div class="container is-max-widescreen">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-full-width">
+          <video autoplay controls loop playsinline muted style="width:100%; border-radius:10px;">
+            <source src="./files/videos/teaser-short.mp4" type="video/mp4">
+          </video>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ==================== Demos (NEW: task tabs + 6x2 video grid) ==================== -->
-  <section class="section section-dark" id="demos">
+  <!-- ==================== ABSTRACT ==================== -->
+  <section class="section section-dark" id="abstract">
     <div class="container is-max-widescreen">
-      <h2 class="title is-3 section-title has-text-centered">Interactive Residual Copilot Demos</h2>
-      <p class="content has-text-justified" style="font-size: 18px;">
-        Side-by-side comparison of Direct Teleoperation (Col. 1-2) vs. Copilot-Assisted Teleoperation (Col. 3-4)
-        across fine-grained manipulation tasks on the same demonstration trajectories in simulation.
+      <h2 class="title is-3 section-title has-text-centered">Abstract</h2>
+      <div class="content has-text-justified">
+        <p>
+          Fine-grained, contact-rich teleoperation remains <span style="color: #c0392b;"><b>slow, error-prone, and unreliable</b></span> in real-world manipulation tasks, even for experienced operators. Shared autonomy offers a promising way to improve performance by combining human intent with automated assistance, but learning effective assistance in simulation requires a faithful model of human behavior, which is difficult to obtain in practice. We propose a <b>real-to-sim-to-real shared autonomy framework</b> that augments human teleoperation with learned corrective behaviors, using a simple yet effective k-nearest-neighbor (kNN) human surrogate to model operator actions in simulation. The surrogate is fit from <i>less than five minutes</i> of real-world teleoperation data and enables stable training of a residual copilot policy with model-free reinforcement learning. The resulting copilot is deployed to assist human operators in real-world fine-grained manipulation tasks. Through simulation experiments and a user study with sixteen participants on industry-relevant tasks, including nut threading, gear meshing, and peg insertion, we show that our system <span style="color: #27ae60;"><b>improves task success for novice operators</b></span> and <span style="color: #27ae60;"><b>execution efficiency for experienced operators</b></span> compared to pure teleoperation and shared-autonomy baselines that rely on expert priors or behavioral-cloning pilots. In addition, copilot-assisted teleoperation produces <span style="color: #27ae60;"><b>higher-quality demonstrations for downstream imitation learning</b></span>.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== TEASER IMAGE ==================== -->
+  <section class="section section-dark">
+    <div class="container is-max-widescreen">
+      <div class="columns is-vcentered is-centered">
+        <img src='files/images/teaser.jpg' alt="Teaser figure">
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== WALKTHROUGH VIDEO ==================== -->
+  <section class="section" id="video">
+    <div class="container is-max-widescreen">
+      <h2 class="title is-3 section-title has-text-centered">Walkthrough Video</h2>
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-full-width">
+          <video controls loop playsinline muted height="100%" style="border-radius:10px;">
+            <source src="./files/videos/supp_video.mp4" type="video/mp4">
+          </video>
+          <p>(Video has sound.)</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== USER STUDY ==================== -->
+  <section class="section section-dark" id="user-study">
+    <div class="container is-max-widescreen">
+      <h2 class="title is-3 section-title has-text-centered">Copilot assistance improves efficiency and task success</h2>
+        <p class="content" style="font-size: 18px;">
+          &#8226; Side-by-side comparison of copilot-assisted and direct teleoperation with the same subject.<br>
+          &#8226; Copilot <b>reliably improves task performance</b>.
+        </p>
+
+      <!-- User study videos -->
+      <div class="has-text-centered">
+          <!-- Nut Threading -->
+          <div style="margin-bottom: 12px;">
+            <figure style="margin: 0;">
+              <video id="us-nt" autoplay controls loop playsinline muted style="width:100%; border-radius:10px;">
+                <source src="files/user_study/nt-ann-20x.mp4" type="video/mp4">
+              </video>
+              <figcaption style="text-align: center; font-size: 14px; opacity: 0.85; margin-top: 6px;">Nut Threading</figcaption>
+            </figure>
+          </div>
+          <!-- Gear Meshing -->
+          <div style="margin-bottom: 12px;">
+            <figure style="margin: 0;">
+              <video id="us-gm" autoplay controls loop playsinline muted style="width:100%; border-radius:10px;">
+                <source src="files/user_study/gm-ann-20x.mp4" type="video/mp4">
+              </video>
+              <figcaption style="text-align: center; font-size: 14px; opacity: 0.85; margin-top: 6px;">Gear Meshing</figcaption>
+            </figure>
+          </div>
+          <!-- Peg Insertion -->
+          <div style="margin-bottom: 12px;">
+            <figure style="margin: 0;">
+              <video id="us-pi" autoplay controls loop playsinline muted style="width:100%; border-radius:10px;">
+                <source src="files/user_study/pi-ann-20x.mp4" type="video/mp4">
+              </video>
+              <figcaption style="text-align: center; font-size: 14px; opacity: 0.85; margin-top: 6px;">Peg Insertion</figcaption>
+            </figure>
+          </div>
+      </div>
+      <script>
+        // Sync each user-study video pair: wait for both to end, then restart together
+        (function() {
+          var pairs = [
+            ['vbc-teleop', 'vbc-residual']
+          ];
+          pairs.forEach(function(ids) {
+            var v1 = document.getElementById(ids[0]);
+            var v2 = document.getElementById(ids[1]);
+            var v1Ended = false, v2Ended = false;
+            function tryRestart() {
+              if (v1Ended && v2Ended) {
+                v1Ended = false;
+                v2Ended = false;
+                v1.currentTime = 0;
+                v2.currentTime = 0;
+                v1.play();
+                v2.play();
+              }
+            }
+            v1.addEventListener('ended', function() { v1Ended = true; tryRestart(); });
+            v2.addEventListener('ended', function() { v2Ended = true; tryRestart(); });
+          });
+        })();
+      </script>
+
+      <img src='./files/images/exp-user-study.jpg' alt="User Study figure" style="width:100%;">
+      <div class="content has-text-justified">
+        <p>
+          &#8226; Objectively, copilot assistance <b>improves success rate</b> and <b>reduces completion time</b>.<br>
+          &#8226; Subjectively, copilot assistance <b>reduces user burden</b> and <b>improves satisfaction</b>.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== DOWNSTREAM-LEARNING ==================== -->
+  <section class="section" id="downstream-learning">
+    <div class="container is-max-widescreen">
+      <h2 class="title is-3 section-title has-text-centered">Copilot assistance leads to higher-quality demonstrations for policy learning</h2>
+      <div class="content has-text-justified">
+        <p>
+        &#8226; Evaluation of DPs trained on same amount of direct teleop. vs. copilot-assisted teleop data (both 34 demos).<br>
+        &#8226; DP trained on copilot-assisted data improves grasp rate 6/20 &#8594; 19/20 and insertion rate 0/20 &#8594; 9/20.
+        </p>
+      </div>
+      <div class="video-pair">
+        <figure>
+          <video id="vbc-teleop" autoplay controls playsinline muted style="width:100%; border-radius:10px;" onloadedmetadata="this.playbackRate=3.0;">
+            <source src="./files/videos/vbc-teleop-ann.mp4" type="video/mp4">
+          </video>
+          <figcaption>DP trained on <b>direct teleop data</b></figcaption>
+        </figure>
+        <figure>
+          <video id="vbc-residual" autoplay controls playsinline muted style="width:100%; border-radius:10px;" onloadedmetadata="this.playbackRate=3.0;">
+            <source src="./files/videos/vbc-res-ann.mp4" type="video/mp4">
+          </video>
+          <figcaption>DP trained on <b>copilot-assisted teleop data</b></figcaption>
+        </figure>
+      </div>
+      <p class="content has-text-centered">
+        (All videos 3x speed)
+      </p>
+      <script>
+        (function() {
+          var v1 = document.getElementById('vbc-teleop');
+          var v2 = document.getElementById('vbc-residual');
+          var v1Ended = false, v2Ended = false;
+          function tryRestart() {
+            if (v1Ended && v2Ended) {
+              v1Ended = false;
+              v2Ended = false;
+              v1.currentTime = 0;
+              v2.currentTime = 0;
+              v1.play();
+              v2.play();
+            }
+          }
+          v1.addEventListener('ended', function() { v1Ended = true; tryRestart(); });
+          v2.addEventListener('ended', function() { v2Ended = true; tryRestart(); });
+        })();
+      </script>
+    </div>
+  </section>
+
+  <!-- ==================== METHOD ==================== -->
+  <section class="section section-dark" id="method">
+    <div class="container is-max-widescreen">
+      <h2 class="title is-3 section-title has-text-centered">Method Overview</h2>
+      <div class="content has-text-justified">
+        <p>
+          We present a <b>real-to-sim-to-real shared autonomy framework</b> that
+          builds a lightweight human surrogate from minimal teleoperation data to train a residual copilot in simulation.
+          At deployment, the copilot provides low-level assistance to human operators.
+        </p>
+      </div>
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-fullwidth">
+          <img src='./files/images/method.jpg' alt="Method overview figure">
+          <br>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== Demos (task tabs + 6x2 video grid) ==================== -->
+  <section class="section" id="demos">
+    <div class="container is-max-widescreen">
+      <h2 class="title is-3 section-title has-text-centered">Residual copilot provides reliable corrective behaviors</h2>
+      <p class="content" style="font-size: 18px;">
+        &#8226; Side-by-side comparison of replaying teleop trajs (Col. 1-2) vs. copilot assisting these teleop trajs (Col. 3-4).<br>
+        &#8226; Click to select task.
       </p>
 
       <!-- Task selector (centered row of 3 buttons) -->
@@ -309,7 +502,7 @@
 
       function vidHTML(src, label) {
         return '<figure>' +
-          '<video controls playsinline muted style="width:100%; border-radius:10px;">' +
+          '<video autoplay controls playsinline muted style="width:100%; border-radius:10px;">' +
             '<source src="' + src + '" type="video/mp4">' +
           '</video>' +
           '<figcaption>' + label + '</figcaption>' +
@@ -373,11 +566,12 @@
   </script>
 
   <!-- ==================== Demos 2: Shared Autonomy ==================== -->
-  <section class="section" id="demos2">
+  <section class="section section-dark" id="demos2">
     <div class="container is-max-widescreen">
-      <h2 class="title is-3 section-title has-text-centered">Interactive Suite of Pilot-Copilot Demos</h2>
-      <p class="content has-text-centered" style="font-size: 18px;">
-        Comparing copilot models across different pilot models and manipulation tasks in simulation.
+      <h2 class="title is-3 section-title has-text-centered">Residual copilot generalizes across different pilot models</h2>
+      <p class="content" style="font-size: 18px;">
+        &#8226; Comparing residual copilot's performance against baseline copilots on different pilot models.<br>
+        &#8226; Click to select task and pilot model.
       </p>
 
       <!-- Task × Pilot selector grid -->
@@ -503,7 +697,7 @@
 
       function vidHTML(src) {
         return '<figure>' +
-          '<video controls playsinline muted style="width:100%; border-radius:10px;">' +
+          '<video autoplay controls playsinline muted style="width:100%; border-radius:10px;">' +
             '<source src="' + src + '" type="video/mp4">' +
           '</video>' +
         '</figure>';
@@ -553,264 +747,39 @@
     });
   </script>
 
-  <!-- ==================== ABSTRACT & VIDEO ==================== -->
-  <section class="section section-dark" id="video">
-    <div class="container is-max-widescreen">
-      <h2 class="title is-3 section-title has-text-centered">Abstract</h2>
-      <div class="content has-text-justified">
-        <p>
-          Fine-grained, contact-rich teleoperation remains slow, error-prone, and unreliable in real-world manipulation tasks, even for experienced operators. Shared autonomy offers a promising way to improve performance by combining human intent with automated assistance, but learning effective assistance in simulation requires a faithful model of human behavior, which is difficult to obtain in practice. We propose a real-to-sim-to-real shared autonomy framework that augments human teleoperation with learned corrective behaviors, using a simple yet effective k-nearest-neighbor (kNN) human surrogate to model operator actions in simulation. The surrogate is fit from less than five minutes of real-world teleoperation data and enables stable training of a residual copilot policy with model-free reinforcement learning. The resulting copilot is deployed to assist human operators in real-world fine-grained manipulation tasks. Through simulation experiments and a user study with sixteen participants on industry-relevant tasks, including nut threading, gear meshing, and peg insertion, we show that our system improves task success for novice operators and execution efficiency for experienced operators compared to pure teleoperation and shared-autonomy baselines that rely on expert priors or behavioral-cloning pilots. In addition, copilot-assisted teleoperation produces higher-quality demonstrations for downstream imitation learning.
-        </p>
-      </div>
-      <h2 class="title is-3 section-title has-text-centered">Video</h2>
-      <div class="columns is-centered has-text-centered">
-        <div class="column is-full-width">
-          <video controls loop playsinline height="100%" style="border-radius:10px;">
-            <source src="./files/videos/supp_video.mp4" type="video/mp4">
-          </video>
-          <p>(Video has sound.)</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ==================== USER STUDY ==================== -->
-  <section class="section" id="user-study">
-    <div class="container is-max-widescreen">
-      <h2 class="title is-3 section-title has-text-centered">User Study</h2>
-        <p class="content has-text-justified" style="font-size: 18px;">
-          We conduct a user study to evaluate the effectiveness of our residual copilot in improving
-          human performance on fine-grained, contact-rich manipulation tasks. 
-          Below, we present side-by-side comparisons of direct teleoperation and copilot-assisted teleoperation 
-          from participant trials (shared with consent). 
-          The results show that the copilot generalizes across different operators and consistently improves both efficiency and task success.
-        </p>
-
-      <!-- 3x2 video grid: rows=tasks, cols=teleop vs copilot -->
-      <div class="columns is-centered has-text-centered">
-        <div class="column" style="max-width: 1000px;">
-          <!-- Column headers -->
-          <div class="video-pair" style="margin-bottom: 4px;">
-            <div style="text-align: center; font-size: 16px">Direct Teleoperation</div>
-            <div style="text-align: center; font-weight: bold; font-size: 16px">Copilot-Assisted Teleoperation (Ours)</div>
-          </div>
-          <!-- Nut Threading -->
-          <div class="video-pair" style="margin-bottom: 12px;">
-            <figure>
-              <video id="us-teleop-nt" autoplay controls playsinline muted style="width:100%; border-radius:10px;">
-                <source src="files/user_study/teleop_nt.mp4" type="video/mp4">
-              </video>
-              <figcaption>Nut Threading</figcaption>
-            </figure>
-            <figure>
-              <video id="us-copilot-nt" autoplay controls playsinline muted style="width:100%; border-radius:10px;">
-                <source src="files/user_study/copilot_nt.mp4" type="video/mp4">
-              </video>
-              <figcaption>Nut Threading</figcaption>
-            </figure>
-          </div>
-          <!-- Gear Meshing -->
-          <div class="video-pair" style="margin-bottom: 12px;">
-            <figure>
-              <video id="us-teleop-gm" autoplay controls playsinline muted style="width:100%; border-radius:10px;">
-                <source src="files/user_study/teleop_gm.mp4" type="video/mp4">
-              </video>
-              <figcaption>Gear Meshing</figcaption>
-            </figure>
-            <figure>
-              <video id="us-copilot-gm" autoplay controls playsinline muted style="width:100%; border-radius:10px;">
-                <source src="files/user_study/copilot_gm.mp4" type="video/mp4">
-              </video>
-              <figcaption>Gear Meshing</figcaption>
-            </figure>
-          </div>
-          <!-- Peg Insertion -->
-          <div class="video-pair" style="margin-bottom: 12px;">
-            <figure>
-              <video id="us-teleop-pi" autoplay controls playsinline muted style="width:100%; border-radius:10px;">
-                <source src="files/user_study/teleop_pi.mp4" type="video/mp4">
-              </video>
-              <figcaption>Peg Insertion</figcaption>
-            </figure>
-            <figure>
-              <video id="us-copilot-pi" autoplay controls playsinline muted style="width:100%; border-radius:10px;">
-                <source src="files/user_study/copilot_pi.mp4" type="video/mp4">
-              </video>
-              <figcaption>Peg Insertion</figcaption>
-            </figure>
-          </div>
-          <p style="text-align: center;">(All videos 5x speed)</p>
-        </div>
-      </div>
-      <script>
-        // Sync each user-study video pair: wait for both to end, then restart together
-        (function() {
-          var pairs = [
-            ['us-teleop-nt', 'us-copilot-nt'],
-            ['us-teleop-gm', 'us-copilot-gm'],
-            ['us-teleop-pi', 'us-copilot-pi']
-          ];
-          pairs.forEach(function(ids) {
-            var v1 = document.getElementById(ids[0]);
-            var v2 = document.getElementById(ids[1]);
-            var v1Ended = false, v2Ended = false;
-            function tryRestart() {
-              if (v1Ended && v2Ended) {
-                v1Ended = false;
-                v2Ended = false;
-                v1.currentTime = 0;
-                v2.currentTime = 0;
-                v1.play();
-                v2.play();
-              }
-            }
-            v1.addEventListener('ended', function() { v1Ended = true; tryRestart(); });
-            v2.addEventListener('ended', function() { v2Ended = true; tryRestart(); });
-          });
-        })();
-      </script>
-
-      <div class="columns is-centered has-text-centered">
-        <div class="column" style="max-width: 1000px;">
-          <!-- TODO: replace with your results figure -->
-          <img src='./files/images/exp-user-study.png' alt="User Study figure">
-        </div>
-      </div>
-      <div class="content has-text-justified">
-        <p>
-          <!-- TODO: describe quantitative results -->
-          This figure shows human experiment results across three contact-rich assembly tasks, 
-          Gear Meshing, Nut Threading, and Peg Insertion,
-          comparing direct teleoperation, a residual baseline, and our Residual Copilot. 
-          On the left, success rates and mean completion times indicate that the Residual Copilot consistently 
-          increases task success and typically reduces execution time across successful trials. 
-          On the right, subjective evaluations reveal lower NASA-TLX workload scores and higher user satisfaction 
-          under the Residual Copilot, demonstrating that performance gains are accompanied by reduced operator 
-          burden and improved user experience across tasks.
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <!-- ==================== DOWNSTREAM-LEARNING ==================== -->
-  <section class="section section-dark" id="downstream-learning">
-    <div class="container is-max-widescreen">
-      <h2 class="title is-3 section-title has-text-centered">Improved Downstream Learning</h2>
-      <div class="content has-text-justified">
-        <p>
-        We show that data collected with the residual copilot yields better policy performance than direct teleoperation. 
-        We train diffusion policies on equal-sized (34 demos) datasets randomly sampled from the user study and 
-        evaluate them on the same set of randomly sampled in-distribution initial configurations. 
-        In the rollout collages below, the left shows BC trained on teleoperation data, and the right shows BC trained on copilot-assisted data.
-      </p>
-      </div>
-      <div class="video-pair">
-        <figure>
-          <video id="vbc-teleop" autoplay playsinline muted style="width:100%; border-radius:10px;" onloadedmetadata="this.playbackRate=2.0;">
-            <source src="./files/videos/vbc-teleop-data.mp4" type="video/mp4">
-          </video>
-          <figcaption><b>BC trained on direct teleop data, Grasp: 6/20, Insert: 0/20</b></figcaption>
-        </figure>
-        <figure>
-          <video id="vbc-residual" autoplay playsinline muted style="width:100%; border-radius:10px;" onloadedmetadata="this.playbackRate=2.0;">
-            <source src="./files/videos/vbc-residual-data.mp4" type="video/mp4">
-          </video>
-          <figcaption><b>BC trained on copilot-assisted teleop data, Grasp: 19/20, Insert: 9/20</b></figcaption>
-        </figure>
-      </div>
-      <p class="content has-text-centered">
-        (All videos 2x speed)
-      </p>
-      <script>
-        (function() {
-          var v1 = document.getElementById('vbc-teleop');
-          var v2 = document.getElementById('vbc-residual');
-          var v1Ended = false, v2Ended = false;
-          function tryRestart() {
-            if (v1Ended && v2Ended) {
-              v1Ended = false;
-              v2Ended = false;
-              v1.currentTime = 0;
-              v2.currentTime = 0;
-              v1.play();
-              v2.play();
-            }
-          }
-          v1.addEventListener('ended', function() { v1Ended = true; tryRestart(); });
-          v2.addEventListener('ended', function() { v2Ended = true; tryRestart(); });
-        })();
-      </script>
-    </div>
-  </section>
-
-  <!-- ==================== METHOD ==================== -->
-  <section class="section" id="method">
-    <div class="container is-max-widescreen">
-      <h2 class="title is-3 section-title has-text-centered">Method Overview</h2>
-      <div class="content has-text-justified">
-        <p>
-          We present a real-to-sim-to-real shared autonomy framework that 
-          builds a lightweight human surrogate from minimal teleoperation data to train a residual copilot in simulation. 
-          At deployment, the copilot provides low-level assistance to human operators.
-        </p>
-      </div>
-      <div class="columns is-centered has-text-centered">
-        <div class="column is-fullwidth">
-          <!-- TODO: replace with your method figure -->
-          <img src='./files/images/method.png' alt="Method overview figure">
-          <br>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <!-- ==================== KNN MOTIVATION ==================== -->
-  <section class="section section-dark" id="knn-motivation">
+  <section class="section" id="knn-motivation">
     <div class="container is-max-widescreen">
-      <h2 class="title is-3 section-title has-text-centered">kNN Motivation</h2>
-      <div class="content has-text-justified">
-        <p>
-          We make two design assumptions for shared autonomy copilot learning:
-          (1) rewards are not densely shaped toward success, to preserve generalizability, and
-          (2) the residual action has comparable magnitude to the human action, so the copilot meaningfully adjusts rather than overrides the pilot.
-
-          Under these assumptions, a BC pilot (right) produces a smooth regression that can lie off the demonstration manifold. 
-          With sparse rewards, residual exploration may drift into unsupported regions and fail to recover. 
-          In contrast, a kNN pilot (left) retrieves real demonstrated actions, anchoring behavior to a tube around the demonstration trajectory 
-          and inducing local, structured exploration instead of uncontrolled global drift.
-        </p>
-      </div>
-      <div class="columns is-centered has-text-centered">
-        <div class="column">
-          <img src='./files/images/web-knn-motiv.png' alt="kNN Motivation figure">
-        </div>
-      </div>
+      <h2 class="title is-3 section-title has-text-centered">kNN human surrogate is a faithful model of human behaviors</h2>
+      <video autoplay controls loop playsinline muted style="width:100%; border-radius:10px;">
+        <source src="" type="video/mp4">
+      </video>
     </div>
   </section>
 
   <!-- ==================== HUGGING FACE DATASET ==================== -->
-  <section class="section" id="datasets">
+  <section class="section section-dark" id="datasets">
     <div class="container is-max-widescreen">
       <h2 class="title is-3 section-title has-text-centered">Open Artifacts</h2>
       <div class="content has-text-justified">
         <p>
-          We release all artifacts necessary to reproduce our results, including policy checkpoints, in a Hugging Face collection: <code>shashuo0104/residual-copilot</code>. The collection contains:
-          (1) datasets for all real-world and simulation demonstrations,
-          (2) robot, object, and camera assets for simulation, and
-          (3) checkpoints for all pilot and copilot policies.
+          We release all artifacts necessary to reproduce our results in a Hugging Face collection: <code>shashuo0104/residual-copilot</code>. The collection contains:<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&#8226; Datasets for all real-world and simulation demonstrations.<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&#8226; Robot, object, and camera assets for simulation.<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&#8226; Checkpoints for all pilot and copilot policies.
         </p>
       </div>
       <!-- Collapsible: Teleoperation Training Data per task -->
       <div class="has-text-centered" style="margin-bottom: 1rem; display: flex; justify-content: center; gap: 12px; flex-wrap: wrap;">
-        <button class="button is-rounded is-info is-outlined" onclick="var el=document.getElementById('train-vid-nut'); var v=el.querySelector('video'); if(el.style.display==='none'){el.style.display='block';v.play();}else{el.style.display='none';v.pause();} this.querySelector('.icon i').classList.toggle('fa-chevron-down'); this.querySelector('.icon i').classList.toggle('fa-chevron-up');">
+        <button class="button is-rounded is-info is-outlined" onclick="var el=document.getElementById('train-vid-nut'); var v=el.querySelector('video'); var s=this.querySelector('span:last-child'); if(el.style.display==='none'){el.style.display='block';v.play();s.textContent='Hide Nut Threading Training Data';}else{el.style.display='none';v.pause();s.textContent='Nut Threading Training Data';} this.querySelector('.icon i').classList.toggle('fa-chevron-down'); this.querySelector('.icon i').classList.toggle('fa-chevron-up');">
           <span class="icon"><i class="fas fa-chevron-down"></i></span>
           <span>Nut Threading Training Data</span>
         </button>
-        <button class="button is-rounded is-info is-outlined" onclick="var el=document.getElementById('train-vid-gear'); var v=el.querySelector('video'); if(el.style.display==='none'){el.style.display='block';v.play();}else{el.style.display='none';v.pause();} this.querySelector('.icon i').classList.toggle('fa-chevron-down'); this.querySelector('.icon i').classList.toggle('fa-chevron-up');">
+        <button class="button is-rounded is-info is-outlined" onclick="var el=document.getElementById('train-vid-gear'); var v=el.querySelector('video'); var s=this.querySelector('span:last-child'); if(el.style.display==='none'){el.style.display='block';v.play();s.textContent='Hide Gear Meshing Training Data';}else{el.style.display='none';v.pause();s.textContent='Gear Meshing Training Data';} this.querySelector('.icon i').classList.toggle('fa-chevron-down'); this.querySelector('.icon i').classList.toggle('fa-chevron-up');">
           <span class="icon"><i class="fas fa-chevron-down"></i></span>
           <span>Gear Meshing Training Data</span>
         </button>
-        <button class="button is-rounded is-info is-outlined" onclick="var el=document.getElementById('train-vid-peg'); var v=el.querySelector('video'); if(el.style.display==='none'){el.style.display='block';v.play();}else{el.style.display='none';v.pause();} this.querySelector('.icon i').classList.toggle('fa-chevron-down'); this.querySelector('.icon i').classList.toggle('fa-chevron-up');">
+        <button class="button is-rounded is-info is-outlined" onclick="var el=document.getElementById('train-vid-peg'); var v=el.querySelector('video'); var s=this.querySelector('span:last-child'); if(el.style.display==='none'){el.style.display='block';v.play();s.textContent='Hide Peg Insertion Training Data';}else{el.style.display='none';v.pause();s.textContent='Peg Insertion Training Data';} this.querySelector('.icon i').classList.toggle('fa-chevron-down'); this.querySelector('.icon i').classList.toggle('fa-chevron-up');">
           <span class="icon"><i class="fas fa-chevron-down"></i></span>
           <span>Peg Insertion Training Data</span>
         </button>
@@ -818,7 +787,7 @@
       <div id="train-vid-nut" style="display: none; margin-bottom: 1rem;">
         <div class="columns is-centered has-text-centered">
           <div class="column" style="max-width: 1000px;">
-            <video controls playsinline muted loop style="width:100%; border-radius:10px;">
+            <video autoplay controls playsinline muted loop style="width:100%; border-radius:10px;">
               <source src="./files/videos/nutthread_train.mp4" type="video/mp4">
             </video>
           </div>
@@ -827,7 +796,7 @@
       <div id="train-vid-gear" style="display: none; margin-bottom: 1rem;">
         <div class="columns is-centered has-text-centered">
           <div class="column" style="max-width: 1000px;">
-            <video controls playsinline muted loop style="width:100%; border-radius:10px;">
+            <video autoplay controls playsinline muted loop style="width:100%; border-radius:10px;">
               <source src="./files/videos/gearmesh_train.mp4" type="video/mp4">
             </video>
           </div>
@@ -836,46 +805,17 @@
       <div id="train-vid-peg" style="display: none; margin-bottom: 1rem;">
         <div class="columns is-centered has-text-centered">
           <div class="column" style="max-width: 1000px;">
-            <video controls playsinline muted loop style="width:100%; border-radius:10px;">
+            <video autoplay controls playsinline muted loop style="width:100%; border-radius:10px;">
               <source src="./files/videos/peginsert_train.mp4" type="video/mp4">
             </video>
           </div>
         </div>
       </div>
-
-      <!-- Collapsible: BC Training Data Spatial Visualization -->
-      <div class="has-text-centered" style="margin-bottom: 1rem;">
-        <button class="button is-rounded is-info is-outlined" onclick="var el=document.getElementById('train-data-viz'); el.style.display = el.style.display==='none'?'block':'none'; this.querySelector('.icon i').classList.toggle('fa-chevron-down'); this.querySelector('.icon i').classList.toggle('fa-chevron-up');">
-          <span class="icon"><i class="fas fa-chevron-down"></i></span>
-          <span>BC Training Data Spatial Visualization</span>
-        </button>
-      </div>
-      <div id="train-data-viz" style="display: none; margin-bottom: 1.5rem;">
-        <div class="columns is-centered has-text-centered">
-          <div class="column" style="max-width: 1000px;">
-            <img src="./files/images/app-data-train.png" alt="BC training data spatial visualization" style="width: 100%; border-radius: 10px;">
-          </div>
-        </div>
-        <div class="content has-text-justified">
-        <p>
-          3D fingertip state coverage (100k points visualized) for three tasks: Gear Meshing, Nut Threading, and Peg Insertion.
-          Top: BC Pilot data from augmented teleoperation demonstrations (442k / 786k / 427k transitions).
-          Bottom: Expert Pilot data from successful residual copilot rollouts (220k / 758k / 195k transitions).
-        </p>
-      </div>
-      </div>
-      <div class="has-text-centered" style="margin-top: 1.5rem;">
-        <a href="https://huggingface.co/collections/shashuo0104/residual-copilot"
-          class="external-link button is-normal is-rounded is-dark">
-          <span class="icon"><i class="fas fa-database"></i></span>
-          <span>Browse HF Dataset</span>
-        </a>
-      </div>
     </div>
   </section>
 
   <!-- ==================== BIBTEX ==================== -->
-  <section class="section section-dark" id="BibTeX">
+  <section class="section" id="BibTeX">
     <div class="container is-max-widescreen content">
       <h2 class="title is-3 section-title has-text-centered">BibTeX</h2>
       <!-- TODO: fill in your BibTeX entry -->
