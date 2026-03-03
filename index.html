@@ -247,7 +247,7 @@
     <div class="container is-max-widescreen">
       <h2 class="title is-3 section-title has-text-centered">Abstract</h2>
       <div class="content has-text-justified">
-        <p>
+        <p style="font-size: 18px; margin-left: 5%; margin-right: 5%;">
           Fine-grained, contact-rich teleoperation remains <span style="color: #c0392b;"><b>slow, error-prone, and unreliable</b></span> in real-world manipulation tasks, even for experienced operators. Shared autonomy offers a promising way to improve performance by combining human intent with automated assistance, but learning effective assistance in simulation requires a faithful model of human behavior, which is difficult to obtain in practice. We propose a <b>real-to-sim-to-real shared autonomy framework</b> that augments human teleoperation with learned corrective behaviors, using a simple yet effective k-nearest-neighbor (kNN) human surrogate to model operator actions in simulation. The surrogate is fit from <i>less than five minutes</i> of real-world teleoperation data and enables stable training of a residual copilot policy with model-free reinforcement learning. The resulting copilot is deployed to assist human operators in real-world fine-grained manipulation tasks. Through simulation experiments and a user study with sixteen participants on industry-relevant tasks, including nut threading, gear meshing, and peg insertion, we show that our system <span style="color: #27ae60;"><b>improves task success for novice operators</b></span> and <span style="color: #27ae60;"><b>execution efficiency for experienced operators</b></span> compared to pure teleoperation and shared-autonomy baselines that rely on expert priors or behavioral-cloning pilots. In addition, copilot-assisted teleoperation produces <span style="color: #27ae60;"><b>higher-quality demonstrations for downstream imitation learning</b></span>.
         </p>
       </div>
@@ -255,13 +255,13 @@
   </section>
 
   <!-- ==================== TEASER IMAGE ==================== -->
-  <section class="section section-dark">
+  <!-- <section class="section section-dark">
     <div class="container is-max-widescreen">
       <div class="columns is-vcentered is-centered">
         <img src='files/images/teaser.jpg' alt="Teaser figure">
       </div>
     </div>
-  </section>
+  </section> -->
 
   <!-- ==================== WALKTHROUGH VIDEO ==================== -->
   <section class="section" id="video">
@@ -269,7 +269,7 @@
       <h2 class="title is-3 section-title has-text-centered">Walkthrough Video</h2>
       <div class="columns is-centered has-text-centered">
         <div class="column is-full-width">
-          <video controls loop playsinline muted height="100%" style="border-radius:10px;">
+          <video controls loop playsinline height="100%" style="border-radius:10px;">
             <source src="./files/videos/supp_video.mp4" type="video/mp4">
           </video>
           <p>(Video has sound.)</p>
@@ -295,7 +295,7 @@
               <video id="us-nt" autoplay controls loop playsinline muted style="width:100%; border-radius:10px;">
                 <source src="files/user_study/nt-ann-20x.mp4" type="video/mp4">
               </video>
-              <figcaption style="text-align: center; font-size: 14px; opacity: 0.85; margin-top: 6px;">Nut Threading</figcaption>
+              <figcaption style="text-align: center; font-size: 18px; opacity: 0.85; margin-top: 6px;">Nut Threading</figcaption>
             </figure>
           </div>
           <!-- Gear Meshing -->
@@ -304,7 +304,7 @@
               <video id="us-gm" autoplay controls loop playsinline muted style="width:100%; border-radius:10px;">
                 <source src="files/user_study/gm-ann-20x.mp4" type="video/mp4">
               </video>
-              <figcaption style="text-align: center; font-size: 14px; opacity: 0.85; margin-top: 6px;">Gear Meshing</figcaption>
+              <figcaption style="text-align: center; font-size: 18px; opacity: 0.85; margin-top: 6px;">Gear Meshing</figcaption>
             </figure>
           </div>
           <!-- Peg Insertion -->
@@ -313,7 +313,7 @@
               <video id="us-pi" autoplay controls loop playsinline muted style="width:100%; border-radius:10px;">
                 <source src="files/user_study/pi-ann-20x.mp4" type="video/mp4">
               </video>
-              <figcaption style="text-align: center; font-size: 14px; opacity: 0.85; margin-top: 6px;">Peg Insertion</figcaption>
+              <figcaption style="text-align: center; font-size: 18px; opacity: 0.85; margin-top: 6px;">Peg Insertion</figcaption>
             </figure>
           </div>
       </div>
@@ -345,7 +345,7 @@
 
       <img src='./files/images/exp-user-study.jpg' alt="User Study figure" style="width:100%;">
       <div class="content has-text-justified">
-        <p>
+        <p style="font-size: 18px;">
           &#8226; Objectively, copilot assistance <b>improves success rate</b> and <b>reduces completion time</b>.<br>
           &#8226; Subjectively, copilot assistance <b>reduces user burden</b> and <b>improves satisfaction</b>.
         </p>
@@ -358,7 +358,7 @@
     <div class="container is-max-widescreen">
       <h2 class="title is-3 section-title has-text-centered">Copilot assistance leads to higher-quality demonstrations for policy learning</h2>
       <div class="content has-text-justified">
-        <p>
+        <p style="font-size: 18px;">
         &#8226; Evaluation of DPs trained on same amount of direct teleop. vs. copilot-assisted teleop data (both 34 demos).<br>
         &#8226; DP trained on copilot-assisted data improves grasp rate 6/20 &#8594; 19/20 and insertion rate 0/20 &#8594; 9/20.
         </p>
@@ -368,16 +368,16 @@
           <video id="vbc-teleop" autoplay controls playsinline muted style="width:100%; border-radius:10px;" onloadedmetadata="this.playbackRate=3.0;">
             <source src="./files/videos/vbc-teleop-ann.mp4" type="video/mp4">
           </video>
-          <figcaption>DP trained on <b>direct teleop data</b></figcaption>
+          <figcaption style="font-size: 18px;">DP trained on <b>direct teleop data</b></figcaption>
         </figure>
         <figure>
           <video id="vbc-residual" autoplay controls playsinline muted style="width:100%; border-radius:10px;" onloadedmetadata="this.playbackRate=3.0;">
             <source src="./files/videos/vbc-res-ann.mp4" type="video/mp4">
           </video>
-          <figcaption>DP trained on <b>copilot-assisted teleop data</b></figcaption>
+          <figcaption style="font-size: 18px;">DP trained on <b>copilot-assisted teleop data</b></figcaption>
         </figure>
       </div>
-      <p class="content has-text-centered">
+      <p class="content has-text-centered" style="font-size: 18px;">
         (All videos 3x speed)
       </p>
       <script>
@@ -407,7 +407,7 @@
     <div class="container is-max-widescreen">
       <h2 class="title is-3 section-title has-text-centered">Method Overview</h2>
       <div class="content has-text-justified">
-        <p>
+        <p style="font-size: 18px;">
           We present a <b>real-to-sim-to-real shared autonomy framework</b> that
           builds a lightweight human surrogate from minimal teleoperation data to train a residual copilot in simulation.
           At deployment, the copilot provides low-level assistance to human operators.
@@ -435,16 +435,16 @@
       <div class="has-text-centered" style="margin-bottom: 1.5rem;">
         <table style="margin: 0 auto; border-collapse: separate; border-spacing: 6px;">
           <tr>
-            <td style="vertical-align: middle; padding-right: 12px;"><span style="font-weight: bold;">Task:</span></td>
-            <td><button class="button is-rounded demo-task-btn is-info" data-task="nut" onclick="selectTask('nut')" style="min-width:140px;">Nut Threading</button></td>
-            <td><button class="button is-rounded demo-task-btn" data-task="gear" onclick="selectTask('gear')" style="min-width:140px;">Gear Meshing</button></td>
-            <td><button class="button is-rounded demo-task-btn" data-task="peg" onclick="selectTask('peg')" style="min-width:140px;">Peg Insertion</button></td>
+            <td style="vertical-align: middle; padding-right: 12px;"><span style="font-weight: bold; font-size: 18px;">Task:</span></td>
+            <td><button class="button is-rounded demo-task-btn is-info" data-task="nut" onclick="selectTask('nut')" style="min-width:140px; font-size:18px;">Nut Threading</button></td>
+            <td><button class="button is-rounded demo-task-btn" data-task="gear" onclick="selectTask('gear')" style="min-width:140px; font-size:18px;">Gear Meshing</button></td>
+            <td><button class="button is-rounded demo-task-btn" data-task="peg" onclick="selectTask('peg')" style="min-width:140px; font-size:18px;">Peg Insertion</button></td>
           </tr>
         </table>
       </div>
 
       <!-- Legend -->
-      <div style="display: flex; justify-content: center; gap: 24px; margin-bottom: 1.5rem;">
+      <div style="display: flex; justify-content: center; gap: 24px; margin-bottom: 1.5rem; font-size: 18px;">
         <span style="display: flex; align-items: center; gap: 6px;">
           <span style="display: inline-block; width: 14px; height: 14px; background: rgb(237, 110, 87); border-radius: 3px;"></span>
           <span style="color: rgb(237, 110, 87);">Human Actions</span>
@@ -465,11 +465,11 @@
       </div>
       <!-- Column headers below videos -->
       <div class="video-quad has-divider" style="margin-top: 4px;">
-        <div style="text-align: center; font-size: 16px; grid-column: span 2;">Direct Teleoperation</div>
-        <div style="text-align: center; font-weight: bold; font-size: 16px; grid-column: span 2;">Copilot-Assisted Teleoperation (Ours)</div>
+        <div style="text-align: center; font-size: 18px; grid-column: span 2;">Direct Teleoperation</div>
+        <div style="text-align: center; font-weight: bold; font-size: 18px; grid-column: span 2;">Copilot-Assisted Teleoperation (Ours)</div>
       </div>
 
-      <p class="has-text-centered">
+      <p class="has-text-centered" style="font-size: 18px;">
         <br>
         (All videos 1x speed)
       </p>
@@ -578,49 +578,49 @@
       <div class="demo-selector" style="margin-bottom: 1.5rem;">
         <table style="width: 100%; border-collapse: separate; border-spacing: 6px;">
           <tr>
-            <td style="width: 16%;"><span style="font-weight: bold;">Task</span></td>
-            <td colspan="5"><span style="font-weight: bold;">Pilot Model</span></td>
+            <td style="width: 16%;"><span style="font-weight: bold; font-size: 18px;">Task</span></td>
+            <td colspan="5"><span style="font-weight: bold; font-size: 18px;">Pilot Model</span></td>
           </tr>
           <tr data-task-row2="nut">
-            <td><button class="button is-rounded demo2-task-btn is-info" data-task="nut" onclick="selectTask2('nut')" style="width:100%;">Nut Threading</button></td>
-            <td><button class="button is-rounded demo2-pilot-btn is-info" data-task="nut" data-pilot="residual" onclick="selectDemo2('nut','residual')" style="width:100%;">Residual Pilot</button></td>
-            <td><button class="button is-rounded demo2-pilot-btn" data-task="nut" data-pilot="bc" onclick="selectDemo2('nut','bc')" style="width:100%;">BC Pilot</button></td>
-            <td><button class="button is-rounded demo2-pilot-btn" data-task="nut" data-pilot="expert" onclick="selectDemo2('nut','expert')" style="width:100%;">Expert Pilot</button></td>
-            <td><button class="button is-rounded demo2-pilot-btn" data-task="nut" data-pilot="noisy" onclick="selectDemo2('nut','noisy')" style="width:100%;">Noisy Pilot</button></td>
-            <td><button class="button is-rounded demo2-pilot-btn" data-task="nut" data-pilot="laggy" onclick="selectDemo2('nut','laggy')" style="width:100%;">Laggy Pilot</button></td>
+            <td><button class="button is-rounded demo2-task-btn is-info" data-task="nut" onclick="selectTask2('nut')" style="width:100%; font-size:18px;">Nut Threading</button></td>
+            <td><button class="button is-rounded demo2-pilot-btn is-info" data-task="nut" data-pilot="residual" onclick="selectDemo2('nut','residual')" style="width:100%; font-size:18px;">Residual Pilot</button></td>
+            <td><button class="button is-rounded demo2-pilot-btn" data-task="nut" data-pilot="bc" onclick="selectDemo2('nut','bc')" style="width:100%; font-size:18px;">BC Pilot</button></td>
+            <td><button class="button is-rounded demo2-pilot-btn" data-task="nut" data-pilot="expert" onclick="selectDemo2('nut','expert')" style="width:100%; font-size:18px;">Expert Pilot</button></td>
+            <td><button class="button is-rounded demo2-pilot-btn" data-task="nut" data-pilot="noisy" onclick="selectDemo2('nut','noisy')" style="width:100%; font-size:18px;">Noisy Pilot</button></td>
+            <td><button class="button is-rounded demo2-pilot-btn" data-task="nut" data-pilot="laggy" onclick="selectDemo2('nut','laggy')" style="width:100%; font-size:18px;">Laggy Pilot</button></td>
           </tr>
           <tr data-task-row2="gear">
-            <td><button class="button is-rounded demo2-task-btn" data-task="gear" onclick="selectTask2('gear')" style="width:100%;">Gear Meshing</button></td>
-            <td><button class="button is-rounded demo2-pilot-btn is-ghost" data-task="gear" data-pilot="residual" onclick="selectDemo2('gear','residual')" style="width:100%;">Residual Pilot</button></td>
-            <td><button class="button is-rounded demo2-pilot-btn is-ghost" data-task="gear" data-pilot="bc" onclick="selectDemo2('gear','bc')" style="width:100%;">BC Pilot</button></td>
-            <td><button class="button is-rounded demo2-pilot-btn is-ghost" data-task="gear" data-pilot="expert" onclick="selectDemo2('gear','expert')" style="width:100%;">Expert Pilot</button></td>
-            <td><button class="button is-rounded demo2-pilot-btn is-ghost" data-task="gear" data-pilot="noisy" onclick="selectDemo2('gear','noisy')" style="width:100%;">Noisy Pilot</button></td>
-            <td><button class="button is-rounded demo2-pilot-btn is-ghost" data-task="gear" data-pilot="laggy" onclick="selectDemo2('gear','laggy')" style="width:100%;">Laggy Pilot</button></td>
+            <td><button class="button is-rounded demo2-task-btn" data-task="gear" onclick="selectTask2('gear')" style="width:100%; font-size:18px;">Gear Meshing</button></td>
+            <td><button class="button is-rounded demo2-pilot-btn is-ghost" data-task="gear" data-pilot="residual" onclick="selectDemo2('gear','residual')" style="width:100%; font-size:18px;">Residual Pilot</button></td>
+            <td><button class="button is-rounded demo2-pilot-btn is-ghost" data-task="gear" data-pilot="bc" onclick="selectDemo2('gear','bc')" style="width:100%; font-size:18px;">BC Pilot</button></td>
+            <td><button class="button is-rounded demo2-pilot-btn is-ghost" data-task="gear" data-pilot="expert" onclick="selectDemo2('gear','expert')" style="width:100%; font-size:18px;">Expert Pilot</button></td>
+            <td><button class="button is-rounded demo2-pilot-btn is-ghost" data-task="gear" data-pilot="noisy" onclick="selectDemo2('gear','noisy')" style="width:100%; font-size:18px;">Noisy Pilot</button></td>
+            <td><button class="button is-rounded demo2-pilot-btn is-ghost" data-task="gear" data-pilot="laggy" onclick="selectDemo2('gear','laggy')" style="width:100%; font-size:18px;">Laggy Pilot</button></td>
           </tr>
           <tr data-task-row2="peg">
-            <td><button class="button is-rounded demo2-task-btn" data-task="peg" onclick="selectTask2('peg')" style="width:100%;">Peg Insertion</button></td>
-            <td><button class="button is-rounded demo2-pilot-btn is-ghost" data-task="peg" data-pilot="residual" onclick="selectDemo2('peg','residual')" style="width:100%;">Residual Pilot</button></td>
-            <td><button class="button is-rounded demo2-pilot-btn is-ghost" data-task="peg" data-pilot="bc" onclick="selectDemo2('peg','bc')" style="width:100%;">BC Pilot</button></td>
-            <td><button class="button is-rounded demo2-pilot-btn is-ghost" data-task="peg" data-pilot="expert" onclick="selectDemo2('peg','expert')" style="width:100%;">Expert Pilot</button></td>
-            <td><button class="button is-rounded demo2-pilot-btn is-ghost" data-task="peg" data-pilot="noisy" onclick="selectDemo2('peg','noisy')" style="width:100%;">Noisy Pilot</button></td>
-            <td><button class="button is-rounded demo2-pilot-btn is-ghost" data-task="peg" data-pilot="laggy" onclick="selectDemo2('peg','laggy')" style="width:100%;">Laggy Pilot</button></td>
+            <td><button class="button is-rounded demo2-task-btn" data-task="peg" onclick="selectTask2('peg')" style="width:100%; font-size:18px;">Peg Insertion</button></td>
+            <td><button class="button is-rounded demo2-pilot-btn is-ghost" data-task="peg" data-pilot="residual" onclick="selectDemo2('peg','residual')" style="width:100%; font-size:18px;">Residual Pilot</button></td>
+            <td><button class="button is-rounded demo2-pilot-btn is-ghost" data-task="peg" data-pilot="bc" onclick="selectDemo2('peg','bc')" style="width:100%; font-size:18px;">BC Pilot</button></td>
+            <td><button class="button is-rounded demo2-pilot-btn is-ghost" data-task="peg" data-pilot="expert" onclick="selectDemo2('peg','expert')" style="width:100%; font-size:18px;">Expert Pilot</button></td>
+            <td><button class="button is-rounded demo2-pilot-btn is-ghost" data-task="peg" data-pilot="noisy" onclick="selectDemo2('peg','noisy')" style="width:100%; font-size:18px;">Noisy Pilot</button></td>
+            <td><button class="button is-rounded demo2-pilot-btn is-ghost" data-task="peg" data-pilot="laggy" onclick="selectDemo2('peg','laggy')" style="width:100%; font-size:18px;">Laggy Pilot</button></td>
           </tr>
         </table>
       </div>
 
       <!-- Legend -->
-      <div style="display: flex; justify-content: center; gap: 24px; margin-bottom: 1.5rem;">
+      <div style="display: flex; justify-content: center; gap: 24px; margin-bottom: 1.5rem; font-size: 18px;">
         <span style="display: flex; align-items: center; gap: 6px;">
           <span style="display: inline-block; width: 14px; height: 14px; background: rgb(237, 110, 87); border-radius: 3px;"></span>
-          <span style="color: rgb(237, 110, 87);">Human Actions</span>
+          <span style="color: rgb(237, 110, 87); font-size: 18px;">Human Actions</span>
         </span>
         <span style="display: flex; align-items: center; gap: 6px;">
           <span style="display: inline-block; width: 14px; height: 14px; background: rgb(163, 131, 193); border-radius: 3px;"></span>
-          <span style="color: rgb(163, 131, 193);">Residual Actions</span>
+          <span style="color: rgb(163, 131, 193); font-size: 18px;">Residual Actions</span>
         </span>
         <span style="display: flex; align-items: center; gap: 6px;">
           <span style="display: inline-block; width: 14px; height: 14px; background: rgb(71, 159, 248); border-radius: 3px;"></span>
-          <span style="color: rgb(71, 159, 248);">Net Actions</span>
+          <span style="color: rgb(71, 159, 248); font-size: 18px;">Net Actions</span>
         </span>
       </div>
 
@@ -749,11 +749,12 @@
 
   <!-- ==================== KNN MOTIVATION ==================== -->
   <section class="section" id="knn-motivation">
-    <div class="container is-max-widescreen">
+    <div class="container is-max-widescreen has-text-centered">
       <h2 class="title is-3 section-title has-text-centered">kNN human surrogate is a faithful model of human behaviors</h2>
-      <video autoplay controls loop playsinline muted style="width:100%; border-radius:10px;">
-        <source src="" type="video/mp4">
+      <video autoplay controls loop playsinline style="width:100%; border-radius:10px;">
+        <source src="files/videos/knn-motiv-video.mp4" type="video/mp4">
       </video>
+      <p style="font-size: 18px;">(Video has sound.)</p>
     </div>
   </section>
 
@@ -762,15 +763,22 @@
     <div class="container is-max-widescreen">
       <h2 class="title is-3 section-title has-text-centered">Open Artifacts</h2>
       <div class="content has-text-justified">
-        <p>
+        <p style="font-size: 18px;">
           We release all artifacts necessary to reproduce our results in a Hugging Face collection: <code>shashuo0104/residual-copilot</code>. The collection contains:<br>
           &nbsp;&nbsp;&nbsp;&nbsp;&#8226; Datasets for all real-world and simulation demonstrations.<br>
           &nbsp;&nbsp;&nbsp;&nbsp;&#8226; Robot, object, and camera assets for simulation.<br>
           &nbsp;&nbsp;&nbsp;&nbsp;&#8226; Checkpoints for all pilot and copilot policies.
         </p>
       </div>
+      <div class="has-text-centered" style="margin-top: 1rem; margin-bottom: 1rem;">
+        <a href="https://huggingface.co/collections/shashuo0104/residual-copilot"
+          class="external-link button is-normal is-rounded is-dark">
+          <span class="icon"><i class="fas fa-database"></i></span>
+          <span>Browse HF Collection</span>
+        </a>
+      </div>
       <!-- Collapsible: Teleoperation Training Data per task -->
-      <div class="has-text-centered" style="margin-bottom: 1rem; display: flex; justify-content: center; gap: 12px; flex-wrap: wrap;">
+      <!-- <div class="has-text-centered" style="margin-bottom: 1rem; display: flex; justify-content: center; gap: 12px; flex-wrap: wrap;">
         <button class="button is-rounded is-info is-outlined" onclick="var el=document.getElementById('train-vid-nut'); var v=el.querySelector('video'); var s=this.querySelector('span:last-child'); if(el.style.display==='none'){el.style.display='block';v.play();s.textContent='Hide Nut Threading Training Data';}else{el.style.display='none';v.pause();s.textContent='Nut Threading Training Data';} this.querySelector('.icon i').classList.toggle('fa-chevron-down'); this.querySelector('.icon i').classList.toggle('fa-chevron-up');">
           <span class="icon"><i class="fas fa-chevron-down"></i></span>
           <span>Nut Threading Training Data</span>
@@ -810,22 +818,22 @@
             </video>
           </div>
         </div>
-      </div>
+      </div> -->
     </div>
   </section>
 
   <!-- ==================== BIBTEX ==================== -->
   <section class="section" id="BibTeX">
     <div class="container is-max-widescreen content">
-      <h2 class="title is-3 section-title has-text-centered">BibTeX</h2>
+      <h2 class="title is-3 section-title has-text-centered">Citation</h2>
       <!-- TODO: fill in your BibTeX entry -->
       <pre><code>
-@article{TODO2025,
-  title={[TODO: Paper Title]},
-  author={[TODO: Authors]},
-  journal={arXiv preprint arXiv:[TODO:XXXX.XXXXX]},
-  year={2025}
-}
+        @article{TODO2025,
+          title={[TODO: Paper Title]},
+          author={[TODO: Authors]},
+          journal={arXiv preprint arXiv:[TODO:XXXX.XXXXX]},
+          year={2025}
+        }
       </code></pre>
     </div>
   </section>
