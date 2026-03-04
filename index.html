@@ -104,6 +104,17 @@
         border-left: 2px dotted rgba(128, 128, 128, 0.5);
       }
     }
+    .demo-row { display: grid; gap: 24px; }
+    @media (min-width: 768px) { .demo-row { grid-template-columns: 1fr 1fr; } }
+    .traj-box {
+      border: 2px dotted rgba(128, 128, 128, 0.5);
+      border-radius: 12px;
+      padding: 10px 10px 6px 10px;
+    }
+    .traj-box .traj-videos { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+    .traj-box .traj-label { text-align: center; font-size: 15px; opacity: 0.85; margin-top: 6px; }
+    .traj-box .traj-col-headers { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 4px; }
+    .traj-box .traj-col-headers div { text-align: center; font-size: 14px; }
     .video-quad-labeled { display: grid; gap: 12px; }
     @media (min-width: 768px) { .video-quad-labeled { grid-template-columns: 30px 1fr 1fr 1fr 1fr; } }
     .video-quad-labeled .row-label {
@@ -220,7 +231,7 @@
   <!-- ==================== TEASER TEXT ==================== -->
   <section class="hero teaser">
     <div class="container is-max-widescreen">
-      <h2 class="subtitle has-text-centered" style="font-size: 24px;">
+      <h2 class="subtitle has-text-centered" style="font-size: 24px; line-height: 1.5;">
         <span style="color: #c0392b;"><b>Slow, error-prone</b></span> fine-grained teleoperation
         <span style="font-size: 24px;">→</span>
         <span style="color: #27ae60;"><b>Efficient, reliable</b></span> shared autonomy<br>
@@ -229,14 +240,15 @@
     </div>
   </section>
 
-  <!-- ==================== VIDEO PLACEHOLDER ==================== -->
-  <section class="hero">
+  <!-- ==================== TEASER VIDEO ==================== -->
+  <section class="hero" style="padding-top: 30px; padding-bottom: 30px;">
     <div class="container is-max-widescreen">
       <div class="columns is-centered has-text-centered">
         <div class="column is-full-width">
-          <video autoplay controls loop playsinline muted style="width:100%; border-radius:10px;">
+          <video autoplay muted controls loop playsinline height="100%" style="border-radius:10px;">
             <source src="./files/videos/teaser-short.mp4" type="video/mp4">
           </video>
+          <p style="font-size: 18px;">(Video has sound.)</p>
         </div>
       </div>
     </div>
@@ -264,7 +276,7 @@
   </section> -->
 
   <!-- ==================== WALKTHROUGH VIDEO ==================== -->
-  <section class="section" id="video">
+  <section class="section" id="video" style="padding-bottom: 1.5rem;">
     <div class="container is-max-widescreen">
       <h2 class="title is-3 section-title has-text-centered">Walkthrough Video</h2>
       <div class="columns is-centered has-text-centered">
@@ -272,7 +284,7 @@
           <video controls loop playsinline height="100%" style="border-radius:10px;">
             <source src="./files/videos/supp_video.mp4" type="video/mp4">
           </video>
-          <p>(Video has sound.)</p>
+          <p style="font-size: 18px;">(Video has sound.)</p>
         </div>
       </div>
     </div>
@@ -292,28 +304,34 @@
           <!-- Nut Threading -->
           <div style="margin-bottom: 12px;">
             <figure style="margin: 0;">
+              <figcaption style="text-align: center; font-size: 18px; opacity: 0.85; margin-top: 6px;">
+                Nut Threading (Copilot learns stable co-axial alignment)
+              </figcaption>
               <video id="us-nt" autoplay controls loop playsinline muted style="width:100%; border-radius:10px;">
-                <source src="files/user_study/nt-ann-20x.mp4" type="video/mp4">
+                <source src="files/user_study/nt-us-ann.mp4" type="video/mp4">
               </video>
-              <figcaption style="text-align: center; font-size: 18px; opacity: 0.85; margin-top: 6px;">Nut Threading</figcaption>
             </figure>
           </div>
           <!-- Gear Meshing -->
           <div style="margin-bottom: 12px;">
             <figure style="margin: 0;">
+              <figcaption style="text-align: center; font-size: 18px; opacity: 0.85; margin-top: 6px;">
+                Gear Meshing (Copilot learns automatic insertion and meshing)
+              </figcaption>
               <video id="us-gm" autoplay controls loop playsinline muted style="width:100%; border-radius:10px;">
-                <source src="files/user_study/gm-ann-20x.mp4" type="video/mp4">
+                <source src="files/user_study/gm-us-ann.mp4" type="video/mp4">
               </video>
-              <figcaption style="text-align: center; font-size: 18px; opacity: 0.85; margin-top: 6px;">Gear Meshing</figcaption>
             </figure>
           </div>
           <!-- Peg Insertion -->
           <div style="margin-bottom: 12px;">
             <figure style="margin: 0;">
+              <figcaption style="text-align: center; font-size: 18px; opacity: 0.85; margin-top: 6px;">
+                Peg Insertion (Copilot learns stable grasping and insertion)
+              </figcaption>
               <video id="us-pi" autoplay controls loop playsinline muted style="width:100%; border-radius:10px;">
-                <source src="files/user_study/pi-ann-20x.mp4" type="video/mp4">
+                <source src="files/user_study/pi-us-ann.mp4" type="video/mp4">
               </video>
-              <figcaption style="text-align: center; font-size: 18px; opacity: 0.85; margin-top: 6px;">Peg Insertion</figcaption>
             </figure>
           </div>
       </div>
@@ -342,14 +360,6 @@
           });
         })();
       </script>
-
-      <img src='./files/images/exp-user-study.jpg' alt="User Study figure" style="width:100%;">
-      <div class="content has-text-justified">
-        <p style="font-size: 18px;">
-          &#8226; Objectively, copilot assistance <b>improves success rate</b> and <b>reduces completion time</b>.<br>
-          &#8226; Subjectively, copilot assistance <b>reduces user burden</b> and <b>improves satisfaction</b>.
-        </p>
-      </div>
     </div>
   </section>
 
@@ -359,20 +369,21 @@
       <h2 class="title is-3 section-title has-text-centered">Copilot assistance leads to higher-quality demonstrations for policy learning</h2>
       <div class="content has-text-justified">
         <p style="font-size: 18px;">
-        &#8226; Evaluation of DPs trained on same amount of direct teleop. vs. copilot-assisted teleop data (both 34 demos).<br>
+        &#8226; Evaluation of DPs trained on same amount of successful direct teleop. vs. copilot-assisted teleop data (both 34 demos).<br>
+        &#8226; Evaluated on the same 20 randomly sampled in-distribution initial configurations (left/right blocks share identical initial states).<br>
         &#8226; DP trained on copilot-assisted data improves grasp rate 6/20 &#8594; 19/20 and insertion rate 0/20 &#8594; 9/20.
         </p>
       </div>
       <div class="video-pair">
         <figure>
-          <video id="vbc-teleop" autoplay controls playsinline muted style="width:100%; border-radius:10px;" onloadedmetadata="this.playbackRate=3.0;">
-            <source src="./files/videos/vbc-teleop-ann.mp4" type="video/mp4">
+          <video id="vbc-teleop" autoplay controls playsinline muted style="width:100%; border-radius:10px;">
+            <source src="./files/videos/vbc-teleop-ann-3x.mp4" type="video/mp4">
           </video>
           <figcaption style="font-size: 18px;">DP trained on <b>direct teleop data</b></figcaption>
         </figure>
         <figure>
-          <video id="vbc-residual" autoplay controls playsinline muted style="width:100%; border-radius:10px;" onloadedmetadata="this.playbackRate=3.0;">
-            <source src="./files/videos/vbc-res-ann.mp4" type="video/mp4">
+          <video id="vbc-residual" autoplay controls playsinline muted style="width:100%; border-radius:10px;">
+            <source src="./files/videos/vbc-res-ann-3x.mp4" type="video/mp4">
           </video>
           <figcaption style="font-size: 18px;">DP trained on <b>copilot-assisted teleop data</b></figcaption>
         </figure>
@@ -422,12 +433,23 @@
     </div>
   </section>
 
+  <!-- ==================== KNN MOTIVATION ==================== -->
+  <section class="section" id="knn-motivation">
+    <div class="container is-max-widescreen has-text-centered">
+      <h2 class="title is-3 section-title has-text-centered">kNN human surrogate is a faithful model of human behaviors</h2>
+      <video autoplay controls loop playsinline style="width:100%; border-radius:10px;">
+        <source src="files/videos/knn-motiv-video.mp4" type="video/mp4">
+      </video>
+      <p style="font-size: 18px;">(Video has sound.)</p>
+    </div>
+  </section>
+
   <!-- ==================== Demos (task tabs + 6x2 video grid) ==================== -->
-  <section class="section" id="demos">
+  <section class="section section-dark" id="demos">
     <div class="container is-max-widescreen">
       <h2 class="title is-3 section-title has-text-centered">Residual copilot provides reliable corrective behaviors</h2>
       <p class="content" style="font-size: 18px;">
-        &#8226; Side-by-side comparison of replaying teleop trajs (Col. 1-2) vs. copilot assisting these teleop trajs (Col. 3-4).<br>
+        &#8226; Side-by-side comparison of replaying teleop trajs vs. copilot assisting these same teleop trajs.<br>
         &#8226; Click to select task.
       </p>
 
@@ -463,11 +485,7 @@
       <div id="demo-video-grid">
         <!-- Videos are populated by JS -->
       </div>
-      <!-- Column headers below videos -->
-      <div class="video-quad has-divider" style="margin-top: 4px;">
-        <div style="text-align: center; font-size: 18px; grid-column: span 2;">Direct Teleoperation</div>
-        <div style="text-align: center; font-weight: bold; font-size: 18px; grid-column: span 2;">Copilot-Assisted Teleoperation (Ours)</div>
-      </div>
+      <!-- Column headers are now inside each trajectory box -->
 
       <p class="has-text-centered" style="font-size: 18px;">
         <br>
@@ -500,29 +518,36 @@
       demoVideos = [];
       endedCount = 0;
 
-      function vidHTML(src, label) {
-        return '<figure>' +
-          '<video autoplay controls playsinline muted style="width:100%; border-radius:10px;">' +
+      function vidHTML(src) {
+        return '<video autoplay controls playsinline muted style="width:100%; border-radius:10px;">' +
             '<source src="' + src + '" type="video/mp4">' +
-          '</video>' +
-          '<figcaption>' + label + '</figcaption>' +
-        '</figure>';
+          '</video>';
       }
 
-      // 3 rows, each with 4 videos: teleop i, teleop i+1, copilot i, copilot i+1
+      function boxHTML(trajIdx) {
+        return '<div class="traj-box">' +
+          '<div class="traj-col-headers">' +
+            '<div>Direct Teleop</div>' +
+            '<div style="font-weight:bold;">Copilot (Ours)</div>' +
+          '</div>' +
+          '<div class="traj-videos">' +
+            vidHTML('./files/demo_1/' + currentTask + '/teleop_traj' + trajIdx + '.mp4') +
+            vidHTML('./files/demo_1/' + currentTask + '/copilot_traj' + trajIdx + '.mp4') +
+          '</div>' +
+          '<div class="traj-label">Traj. ' + trajIdx + '</div>' +
+        '</div>';
+      }
+
+      // 3 rows, each with 2 trajectory boxes
       for (var r = 0; r < 3; r++) {
         var i1 = r * 2 + 1;
         var i2 = r * 2 + 2;
 
         var row = document.createElement('div');
-        row.className = 'video-quad has-divider';
+        row.className = 'demo-row';
         row.style.marginBottom = '16px';
 
-        row.innerHTML =
-          vidHTML('./files/demo_1/' + currentTask + '/teleop_traj' + i1 + '.mp4', 'Traj. ' + i1) +
-          vidHTML('./files/demo_1/' + currentTask + '/teleop_traj' + i2 + '.mp4', 'Traj. ' + i2) +
-          vidHTML('./files/demo_1/' + currentTask + '/copilot_traj' + i1 + '.mp4', 'Traj. ' + i1) +
-          vidHTML('./files/demo_1/' + currentTask + '/copilot_traj' + i2 + '.mp4', 'Traj. ' + i2);
+        row.innerHTML = boxHTML(i1) + boxHTML(i2);
 
         grid.appendChild(row);
 
@@ -564,6 +589,20 @@
       });
     });
   </script>
+
+  <!-- ==================== User Study - Quantitative ====================-->>
+  <section class="section" id="user-study">
+    <div class="container is-max-widescreen">
+      <h2 class="title is-3 section-title has-text-centered">Users improve performance and satisfaction with copilot assistance</h2>
+        <div class="content has-text-justified">
+          <p style="font-size: 18px;">
+            &#8226; Objectively, copilot assistance <b>improves success rate</b> and <b>reduces completion time</b>.<br>
+            &#8226; Subjectively, copilot assistance <b>reduces user burden</b> and <b>improves satisfaction</b>.
+          </p>
+        </div>
+      <img src='./files/images/exp-user-study.jpg' alt="User Study figure" style="width:100%;">
+    </div>
+  </section>
 
   <!-- ==================== Demos 2: Shared Autonomy ==================== -->
   <section class="section section-dark" id="demos2">
@@ -747,19 +786,8 @@
     });
   </script>
 
-  <!-- ==================== KNN MOTIVATION ==================== -->
-  <section class="section" id="knn-motivation">
-    <div class="container is-max-widescreen has-text-centered">
-      <h2 class="title is-3 section-title has-text-centered">kNN human surrogate is a faithful model of human behaviors</h2>
-      <video autoplay controls loop playsinline style="width:100%; border-radius:10px;">
-        <source src="files/videos/knn-motiv-video.mp4" type="video/mp4">
-      </video>
-      <p style="font-size: 18px;">(Video has sound.)</p>
-    </div>
-  </section>
-
   <!-- ==================== HUGGING FACE DATASET ==================== -->
-  <section class="section section-dark" id="datasets">
+  <section class="section" id="datasets">
     <div class="container is-max-widescreen">
       <h2 class="title is-3 section-title has-text-centered">Open Artifacts</h2>
       <div class="content has-text-justified">
@@ -823,7 +851,7 @@
   </section>
 
   <!-- ==================== BIBTEX ==================== -->
-  <section class="section" id="BibTeX">
+  <section class="section section-dark" id="BibTeX">
     <div class="container is-max-widescreen content">
       <h2 class="title is-3 section-title has-text-centered">Citation</h2>
       <!-- TODO: fill in your BibTeX entry -->
