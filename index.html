@@ -399,25 +399,6 @@
       <p class="content has-text-centered" style="font-size: 18px;">
         (All videos 3x speed)
       </p>
-      <script>
-        (function() {
-          var v1 = document.getElementById('vbc-teleop');
-          var v2 = document.getElementById('vbc-residual');
-          var v1Ended = false, v2Ended = false;
-          function tryRestart() {
-            if (v1Ended && v2Ended) {
-              v1Ended = false;
-              v2Ended = false;
-              v1.currentTime = 0;
-              v2.currentTime = 0;
-              v1.play();
-              v2.play();
-            }
-          }
-          v1.addEventListener('ended', function() { v1Ended = true; tryRestart(); });
-          v2.addEventListener('ended', function() { v2Ended = true; tryRestart(); });
-        })();
-      </script>
     </div>
   </section>
 
@@ -445,7 +426,7 @@
   <section class="section" id="knn-motivation">
     <div class="container is-max-widescreen has-text-centered">
       <h2 class="title is-3 section-title has-text-centered">kNN human surrogate is a faithful model of human behaviors</h2>
-      <video controls loop playsinline style="width:100%; border-radius:10px;">
+      <video controls playsinline style="width:100%; border-radius:10px;">
         <source src="files/videos/knn-motiv-video.mp4" type="video/mp4">
       </video>
       <p style="font-size: 18px;">(Video has sound.)</p>
