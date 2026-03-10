@@ -1,4 +1,4 @@
-name="exp-user-study"
+name="method"
 
 gs -sDEVICE=pdfwrite \
    -dCompatibilityLevel=1.4 \
